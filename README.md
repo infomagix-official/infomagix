@@ -8,7 +8,8 @@
   - 기존 PHP 기반 정적 페이지를 React 기반 SPA로 재구축
   - 유지보수성 및 확장성 향상
   - 기존 사이트의 느낌은 유지하되 **저작권 문제가 없도록 UI 재구성**
-  - 빌드 후 생성되는 **정적 파일을 회사 서버(Nginx/Apache)에서 호스팅**
+  - ~~빌드 후 생성되는 정적 파일을 회사 서버(Nginx/Apache)에서 호스팅~~
+  - main 브랜치로의 병합 시 Cloudflare page로 자동 빌드 및 배포(호스팅)
 - **특징**
   - 로그인, 회원가입 등 비즈니스 로직 없음
   - **순수 정보 제공용 정적 홈페이지**
@@ -19,10 +20,12 @@
 ## 2. 개발 및 배포 환경
 
 ### 한글, 영문 도입
+
 - 전역 상태 플래그 도입 후 해당 플레그에 따라 다른 이미지를 불러오도록 구현 예정
 - default flag값은 korean으로 함
 
 ### 한글 홈페이지 개발 전 필수 변경 사항
+
 - assets 내부 ko, en 디렉토리 분리
 - 내부 이미지 경로에 ko 추가
 - 헤더에 영문, 한글 토글 탭 추가
@@ -45,10 +48,14 @@
 - `npm run build` 시 `/dist` 폴더 생성
 - 서버는 `/dist` 내용만 그대로 업로드
 
-### Server 요구사항
+### Serverless(Cloudflare page)
 
-- 정적 파일 서빙 가능한 서버(Nginx/Apache)
-- React Router 적용 시 **모든 라우트를 index.html로 fallback**
+- Github Actions를 통한 Cloudflare로의 자동 빌드 및 배포
+
+### ~~Server 요구사항~~
+
+- ~~정적 파일 서빙 가능한 서버(Nginx/Apache)~~
+- ~~React Router 적용 시 모든 라우트를 index.html로 fallback~~
 
 ---
 
@@ -219,7 +226,7 @@
 
 - PC 기준 1200px 중앙 정렬 레이아웃
 - 기존 사이트 파란색 계열 참고하되 변화된 톤 적용
-- 폰트: Noto Sans, Pretendard 등 무료 폰트
+- 폰트: 맑은 고딕(피드백 사항)
 - 이미지
   - **제공된 원본 이미지를 형식 변환 없이 그대로 사용**
 
@@ -258,20 +265,6 @@ vite.config.js
 - `/dist`  
 - 서버에 `/dist` 폴더 그대로 업로드
 
----
-
-## 9. Nginx 설정 예시
-
-```
-server {
-  listen 80;
-  server_name infomagix.com;
-  root /var/www/infomagix-react/dist;
-  index index.html;
-  location / {
-      try_files $uri /index.html;
-}
-```
 
 ## 10. (추가)product shortcut의 라우팅 주소
 
