@@ -5,6 +5,7 @@
   --border: #e4e8f0;
   --surface: #ffffff;
   --shadow: 0 12px 30px rgba(19, 42, 70, 0.08);
+  font-family: "맑은 고딕", "Malgun Gothic", "돋움", dotum, "Segoe UI", sans-serif;
 }
 
 #root {

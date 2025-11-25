@@ -5,7 +5,7 @@ import communityImage from '../../assets/en/community/community.png'
 function Community() {
   return (
     <main className="content">
-      <HeroGallery title="Community" subtitle="Community" />
+      <HeroGallery />
       <PageTitleBar title="Community" />
       <div className="single-visual">
         <img src={communityImage} alt="Community" />

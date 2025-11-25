@@ -5,7 +5,7 @@ import contactImage from '../../assets/en/contact/contact.png'
 function Contact() {
   return (
     <main className="content">
-      <HeroGallery title="Contact" subtitle="Contact" />
+      <HeroGallery />
       <PageTitleBar title="Contact" />
       <div className="single-visual">
         <img src={contactImage} alt="Contact information" />

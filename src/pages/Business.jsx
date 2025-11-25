@@ -17,7 +17,7 @@ function Business() {
 
   return (
     <main className="content">
-      <HeroGallery title="Business Introduction" subtitle="Business Introduction" />
+      <HeroGallery />
       <PageTitleBar title="Business Introduction" />
       <div className="tabs">
         {businessTabs.map((tab) => (

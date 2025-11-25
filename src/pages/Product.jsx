@@ -57,7 +57,7 @@ function Product() {
 
   return (
     <main className="content">
-      <HeroGallery title="Product" subtitle="Product" />
+      <HeroGallery />
       <PageTitleBar title="Product" />
       <div className="product-buttons">
         {products.map((product) => (
