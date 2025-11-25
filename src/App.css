@@ -474,9 +474,11 @@
 }
 
 .tab-panel.direction-panel {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
+  display: flex;
+  /* display: grid; */
+  height: 600px;
+  /* grid-template-columns: 1.4fr 1fr;
+  gap: 24px; */
   align-items: stretch;
 }
 
@@ -504,6 +506,7 @@
 }
 
 .map-wrapper {
+  width: 100%;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);

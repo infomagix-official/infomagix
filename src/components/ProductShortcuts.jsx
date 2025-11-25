@@ -16,7 +16,7 @@ const shortcuts = [
   { name: 'Coastdown Test System', image: coastdown, slug: 'vms-coastdown-testing' },
   { name: 'Performance Test System', image: performance, slug: 'gps-vms-test-system' },
   { name: 'GPS + CAN Speed Sensor', image: gpscan, slug: 'gps-speed-sensor-vsd' },
-  { name: 'RPS driver controller VMS3400', image: vms3400, slug: 'aps-drive-controller-vms3400' },
+  { name: 'APS driver controller VMS3400', image: vms3400, slug: 'aps-drive-controller-vms3400' },
   { name: 'A/D BOARD', image: adboard, slug: 'b2-daq-ad-board' },
   { name: 'Pedal Robot', image: pedalRobot, slug: 'pedal-robot' },
   { name: 'VLOG Data Logger', image: vlog, slug: 'vlog-data-logger' },

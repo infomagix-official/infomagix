@@ -48,14 +48,16 @@ function Company() {
         activeTab === 'direction' ? (
           <div className="tab-panel direction-panel">
             <div className="map-wrapper">
-              <iframe
-                title="Infomagix Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.670014856684!2d126.9931133153123!3d37.42754753981695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b637e5f21d829%3A0x2d71b24e9497edc9!2sGwacheon%20dae-ro%207-gil%2033%2C%20Gwacheon-si%2C%20Gyeonggi-do!5e0!3m2!1sen!2skr!4v1700000000000!5m2!1sen!2skr"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.9400261801443!2d126.97037227671757!3d37.39125057208443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5e1509f795eb%3A0x43e512080be8947f!2zKOyjvCnsnbjtj6zrp6Tsp4HsiqQ!5e0!3m2!1sko!2skr!4v1764035258900!5m2!1sko!2skr"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+                referrerPolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
-            <div className="tab-info">
+            {/* <div className="tab-info">
               <h3>Visit Our HQ</h3>
               <p>Gwacheon-daero 7-gil 33, Gwacheon-si, Gyeonggi-do</p>
               <p>5 minutes walk from Government Complex Gwacheon Station.</p>
@@ -71,7 +73,7 @@ function Company() {
               >
                 View on Google Maps
               </button>
-            </div>
+            </div> */}
           </div>
         ) : (
           <div className="tab-panel image-only">

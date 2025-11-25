@@ -9,14 +9,14 @@ function CustomerService() {
           <p className="cs-number">010-9061-3414</p>
           <p className="cs-hours">Weekday 09:00 - 18:00</p>
         </div>
-        <div className="cs-actions">
+        {/* <div className="cs-actions">
           <Link to="/contact" className="btn btn-primary">
             Quote
           </Link>
           <Link to="/contact" className="btn btn-secondary">
             Contact
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

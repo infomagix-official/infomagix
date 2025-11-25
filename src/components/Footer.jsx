@@ -12,11 +12,11 @@ function Footer() {
           </div>
         </div>
         <div className="footer-body">
-          Established: September 3, 2002 | CEO: Youngbak Park | Business Registration Number: 220-86-46473
+          Established: September 3, 2002 | CEO: Myoungshik Park | Business Registration Number: 220-86-46429
           <br />
-          Address: A-610 B TEGN TOWER, Gasan-dong, Geumcheon-gu, Seoul, Republic of Korea
+          Address : A-1401 D TECH TOWER, Gwacheon-daero, Gwacheon-si, Gyeonggi-do, Republic of Korea
           <br />
-          Tel: 0505-335-4141 | Fax: 02-861-9763 | Email: mapark@infomagix.com
+          Tel: 02-2088-0517 | Fax: 02-6919-1575
         </div>
         <div className="footer-meta">Copyright © Infomagix Co., Ltd. All rights reserved.</div>
       </div>
