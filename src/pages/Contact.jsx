@@ -1,6 +1,6 @@
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import contactImage from '../../assets/contact/contact.png'
+import contactImage from '../../assets/en/contact/contact.png'
 
 function Contact() {
   return (

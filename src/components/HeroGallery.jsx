@@ -1,4 +1,4 @@
-import heroImage from '../../assets/common/HeroGallery.png'
+import heroImage from '../../assets/en/common/HeroGallery.png'
 
 function HeroGallery({ title = '', subtitle = ''}) {
   return (

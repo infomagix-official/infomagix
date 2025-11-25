@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import companyHistoryImage from '../../assets/company/company_history.png'
-import companyOverviewImage from '../../assets/company/company_overview.png'
+import companyHistoryImage from '../../assets/en/company/company_history.png'
+import companyOverviewImage from '../../assets/en/company/company_overview.png'
 
 const companyTabs = [
   {

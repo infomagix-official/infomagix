@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import headerLogo from '../../assets/logo/logo_header.png'
+import headerLogo from '../../assets/en/logo/logo_header.png'
 
 const navItems = [
   { label: 'Company', to: '/company' },
