@@ -262,7 +262,7 @@ server {
 }
 ```
 
-## 10. product shortcut의 라우팅 주소
+## 10. (추가)product shortcut의 라우팅 주소
 
 - Costdown Test System
   이동 주소: /product/vms-coastdown-testing
