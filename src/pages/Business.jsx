@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import keyTechnology from '../../assets/business/keytechnology.png'
-import technicalStaff from '../../assets/business/technicalstaff.png'
-import salesRecords from '../../assets/business/salesrecords.png'
+import keyTechnology from '../../assets/en/business/keytechnology.png'
+import technologyStack from '../../assets/en/business/technologystack.png'
+import salesRecords from '../../assets/en/business/salesrecords.png'
 
 const businessTabs = [
   { id: 'key-technology', label: 'Key technology', image: keyTechnology, alt: 'Key technology' },
-  { id: 'technical-staff', label: 'Technical staff', image: technicalStaff, alt: 'Technical staff' },
+  { id: 'technology-stack', label: 'Technology stack', image: technologyStack, alt: 'Technical staff' },
   { id: 'sales-records', label: 'Sales Records', image: salesRecords, alt: 'Sales records' },
 ]
 
@@ -17,7 +17,7 @@ function Business() {
 
   return (
     <main className="content">
-      <HeroGallery title="Business Introduction" subtitle="Business Introduction" />
+      <HeroGallery />
       <PageTitleBar title="Business Introduction" />
       <div className="tabs">
         {businessTabs.map((tab) => (

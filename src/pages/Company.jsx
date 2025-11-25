@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import companyHistoryImage from '../../assets/company/company_history.png'
-import companyOverviewImage from '../../assets/company/company_overview.png'
+import companyHistoryImage from '../../assets/en/company/company_history.png'
+import companyOverviewImage from '../../assets/en/company/company_overview.png'
 
 const companyTabs = [
   {
@@ -30,7 +30,7 @@ function Company() {
 
   return (
     <main className="content">
-      <HeroGallery title="Company" subtitle="About Infomagix" />
+      <HeroGallery />
       <PageTitleBar title="Company Info" />
       <div className="tabs">
         {companyTabs.map((tab) => (
@@ -48,7 +48,7 @@ function Company() {
         activeTab === 'direction' ? (
           <div className="tab-panel direction-panel">
             <div className="map-wrapper">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.9400261801443!2d126.97037227671757!3d37.39125057208443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5e1509f795eb%3A0x43e512080be8947f!2zKOyjvCnsnbjtj6zrp6Tsp4HsiqQ!5e0!3m2!1sko!2skr!4v1764035258900!5m2!1sko!2skr"
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d917.1649032748959!2d126.97745779902576!3d37.41160083608959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5f16b02faccf%3A0xfea05eacda8163a3!2sD%20TECH%20TOWER!5e0!3m2!1sko!2skr!4v1764059456594!5m2!1sko!2skr"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
