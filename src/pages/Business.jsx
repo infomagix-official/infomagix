@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 import keyTechnology from '../../assets/en/business/keytechnology.png'
-import technicalStaff from '../../assets/en/business/technicalstaff.png'
+import technologyStack from '../../assets/en/business/technologystack.png'
 import salesRecords from '../../assets/en/business/salesrecords.png'
 
 const businessTabs = [
   { id: 'key-technology', label: 'Key technology', image: keyTechnology, alt: 'Key technology' },
-  { id: 'technical-staff', label: 'Technical staff', image: technicalStaff, alt: 'Technical staff' },
+  { id: 'technology-stack', label: 'Technology stack', image: technologyStack, alt: 'Technical staff' },
   { id: 'sales-records', label: 'Sales Records', image: salesRecords, alt: 'Sales records' },
 ]
 
