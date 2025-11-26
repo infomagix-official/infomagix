@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import headerLogo from '../../assets/en/logo/logo_header.png'
+import { useLanguage } from '../context/LanguageContext'
 
 const navItems = [
   { label: 'Company', to: '/company' },
@@ -10,6 +11,8 @@ const navItems = [
 ]
 
 function Header() {
+  const { language, toggleLanguage } = useLanguage()
+
   return (
     <header className="site-header">
       <div className="inner">
@@ -26,7 +29,11 @@ function Header() {
               {item.label}
             </NavLink>
           ))}
+          <button type="button" className="lang-toggle" onClick={toggleLanguage}>
+            {language === 'en' ? 'English' : 'Korean'}
+          </button>
         </nav>
+        
       </div>
     </header>
   )
