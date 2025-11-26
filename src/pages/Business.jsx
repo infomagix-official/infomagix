@@ -13,8 +13,6 @@ import salesRecordsKO from '../../assets/ko/business/salesrecords.png'
 import { useLanguage } from '../context/LanguageContext'
 import BusinessProductDescription from '../components/BusinessProductDescription'
 
-const text = 'fdafssaf';
-
 const businessTabs = [
   { 
     id: 'key-technology', 

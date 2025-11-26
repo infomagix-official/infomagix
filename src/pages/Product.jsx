@@ -2,42 +2,234 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import nvds from '../../assets/en/product/nvds.png'
-import pedalRobot from '../../assets/en/product/pedalrobot.png'
-import gpsSpeedSensorVsd from '../../assets/en/product/gpsspeedsensorvsd.png'
-import gpsVmsTestSystem from '../../assets/en/product/gpsvmstestsystem.png'
-import apsDriveController from '../../assets/en/product/aps(drive)controllervms3400.png'
-import vmsCoastdownTesting from '../../assets/en/product/vmscoastdowntesting.png'
-import vmsVehicleDaq from '../../assets/en/product/vmsvehicledaq.png'
-import vehicleDriveTestSystem from '../../assets/en/product/vehicledrivetestsystem.png'
-import vlogDataLogger from '../../assets/en/product/vlogdatalogger.png'
-import vcdCanDisplay from '../../assets/en/product/vcdcandisplay.png'
-import b2DaqAdBoard from '../../assets/en/product/b2daqadboard.png'
-import activeSoftware from '../../assets/en/product/activesoftware.png'
-import activeeyeSoftware from '../../assets/en/product/chanbercontroldaq.png'
-import testBench from '../../assets/en/product/testbench.png'
+
+
+import nvdsEN from '../../assets/en/product/nvds.png'
+import pedalRobotEN from '../../assets/en/product/pedalrobot.png'
+import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
+import gpsVmsTestSystemEN from '../../assets/en/product/gpsvmstestsystem.png'
+import apsDriveControllerEN from '../../assets/en/product/aps(drive)controllervms3400.png'
+import vmsCoastdownTestingEN from '../../assets/en/product/vmscoastdowntesting.png'
+import vmsVehicleDaqEN from '../../assets/en/product/vmsvehicledaq.png'
+import vehicleDriveTestSystemEN from '../../assets/en/product/vehicledrivetestsystem.png'
+import vlogDataLoggerEN from '../../assets/en/product/vlogdatalogger.png'
+import vcdCanDisplayEN from '../../assets/en/product/vcdcandisplay.png'
+import b2DaqAdBoardEN from '../../assets/en/product/b2daqadboard.png'
+import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
+import activeeyeSoftwareEN from '../../assets/en/product/activeeyesoftware.png'
+import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
+import testBenchEN from '../../assets/en/product/testbench.png'
+import costDownTestServiceEN from '../../assets/ko/product/costdowntestservice.png'
+
+import nvdsKO from '../../assets/ko/product/nvds.png'
+import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
+import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
+import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
+import apsDriveControllerKO from '../../assets/ko/product/aps(drive)controllervms3400.png'
+import vmsCoastdownTestingKO from '../../assets/ko/product/vmscoastdowntesting.png'
+import vmsVehicleDaqKO from '../../assets/ko/product/vmsvehicledaq.png'
+import vehicleDriveTestSystemKO from '../../assets/ko/product/vehicledrivetestsystem.png'
+import vlogDataLoggerKO from '../../assets/ko/product/vlogdatalogger.png'
+import vcdCanDisplayKO from '../../assets/ko/product/vcdcandisplay.png'
+import b2DaqAdBoardKO from '../../assets/ko/product/b2daqadboard.png'
+import activeSoftwareKO from '../../assets/ko/product/activesoftware.png'
+import activeeyeSoftwareKO from '../../assets/ko/product/activeeyesoftware.png'
+import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
+import testBenchKO from '../../assets/ko/product/testbench.png'
+import costDownTestServiceKO from '../../assets/ko/product/costdowntestservice.png'
+
+import { useLanguage } from '../context/LanguageContext'
 
 const products = [
-  { id: 'nvds', name: 'NVDS', image: nvds },
-  { id: 'pedal-robot', name: 'Pedal Robot', image: pedalRobot },
-  { id: 'gps-speed-sensor-vsd', name: 'GPS speed sensor VSD', image: gpsSpeedSensorVsd },
-  { id: 'gps-vms-test-system', name: 'GPS+VMS Test system', image: gpsVmsTestSystem },
-  { id: 'aps-drive-controller-vms3400', name: 'APS(Drive) controller VMS3400', image: apsDriveController },
-  { id: 'vms-coastdown-testing', name: 'VMS Coastdown testing', image: vmsCoastdownTesting },
-  { id: 'vms-vehicle-daq', name: 'VMS Vehicle DAQ', image: vmsVehicleDaq },
-  { id: 'vehicle-drive-test-system', name: 'Vehicle Drive Test System', image: vehicleDriveTestSystem },
-  { id: 'vlog-data-logger', name: 'VLOG Data logger', image: vlogDataLogger },
-  { id: 'vcd-can-display', name: 'VCD CAN display', image: vcdCanDisplay },
-  { id: 'b2-daq-ad-board', name: 'B2-DAQ AD Board', image: b2DaqAdBoard },
-  { id: 'active-software', name: 'Active software', image: activeSoftware },
-  { id: 'activeeye-software', name: 'Activeeye software', image: activeeyeSoftware },
-  { id: 'test-bench', name: 'Test bench', image: testBench },
+  { 
+    id: 'nvds',
+    name: {
+      en: 'NVDS',
+      ko: 'NVDS'
+    }, 
+    image: {
+      en: nvdsEN,
+      ko: nvdsKO
+    }
+  },
+  { 
+    id: 'pedal-robot',
+    name: {
+      en: 'Pedal Robot',
+      ko: 'Pedal Robot'
+    },
+    image: {
+      en: pedalRobotEN,
+      ko: pedalRobotKO
+    }
+      
+  },
+  { 
+    id: 'gps-speed-sensor-vsd',
+    name: {
+      en: 'GPS speed sensor VSD',
+      ko: 'GPS speed sensor VSD'
+    },
+    image: {
+      en: gpsSpeedSensorVsdEN,
+      ko: gpsSpeedSensorVsdKO
+    }
+  },
+  { 
+    id: 'gps-vms-test-system', 
+    name: {
+      en: 'GPS+VMS Test system',
+      ko: 'GPS+VMS Test system',
+    },
+    image: {
+      en: gpsVmsTestSystemEN,
+      ko: gpsVmsTestSystemKO
+    }
+  },
+  { 
+    id: 'aps-drive-controller-vms3400', 
+    name: {
+      en: 'APS(Drive) controller VMS3400',
+      ko: 'APS(Drive) controller VMS3400'
+    }, 
+    image: {
+      en: apsDriveControllerEN,
+      ko: apsDriveControllerKO 
+    }
+  },
+  { 
+    id: 'vms-coastdown-testing', 
+    name: {
+      en: 'VMS Coastdown testing',
+      ko: 'VMS 연비 코스트다운시험'
+    }, 
+    image: {
+      en: vmsCoastdownTestingEN,
+      ko: vmsCoastdownTestingKO
+    }
+  },
+  {
+    id: 'coastdown-test-service',
+    name: {
+      en: 'costdown test service',
+      ko: '주행저항시험용역',
+    },
+    image: {
+      en: costDownTestServiceEN,
+      ko: costDownTestServiceKO
+    }
+  },
+  { 
+    id: 'vms-vehicle-daq', 
+    name: {
+      en: 'VMS Vehicle DAQ',
+      ko: 'VMS Vehicle DAQ'
+    }, 
+    image: {
+      en: vmsVehicleDaqEN,
+      ko: vmsVehicleDaqKO,
+    }
+  },
+  { 
+    id: 'vehicle-drive-test-system',
+    name: {
+      en: 'Vehicle Drive Test System',
+      ko: '주행검사장비'
+    }, 
+    image: {
+      en: vehicleDriveTestSystemEN,
+      ko: vehicleDriveTestSystemKO
+    }
+  },
+  { 
+    id: 'vlog-data-logger', 
+    name: {
+      en: 'VLOG Data logger',
+      ko: 'VLOG Data logger',
+    }, 
+    image: {
+      en: vlogDataLoggerEN,
+      ko: vlogDataLoggerKO
+    }
+  },
+  { 
+    id: 'vcd-can-display', 
+    name: {
+      en: 'VCD CAN display',
+      ko: 'VCD CAN display',
+    }, 
+    image: {
+      en: vcdCanDisplayEN,
+      ko: vcdCanDisplayKO
+    }
+  },
+  { 
+    id: 'b2-daq-ad-board', 
+    name: {
+      en: 'B2-DAQ AD Board',
+      ko: 'B2-DAQ AD Board'
+    }, 
+    image: {
+      en: b2DaqAdBoardEN,
+      ko: b2DaqAdBoardKO,
+    }
+  },
+  { 
+    id: 'active-software', 
+    name: {
+      en: 'Active software',
+      ko: 'Active software'
+    }, 
+    image: {
+      en: activeSoftwareEN,
+      ko: activeSoftwareKO
+    }
+  },
+  { 
+    id: 'activeeye-software',
+    name: {
+      en: 'Activeeye Software',
+      ko: 'Activeeye Software'
+    }, 
+    image: {
+      en: activeeyeSoftwareEN,
+      ko: activeeyeSoftwareKO
+    }
+   },
+  {
+    id: 'chamber-control-daq',
+    name: {
+      en: 'Chamber control & DAQ',
+      ko: '챔버컨트롤 & DAQ',
+    },
+    image: {
+      en: chamberControlBaqEN,
+      ko: chamberControlBaqKO
+    }
+  },
+  { 
+    id: 'test-bench', 
+    name: {
+      en: 'Test bench',
+      ko: 'Test bench'
+    }, 
+    image: {
+      en: testBenchEN,
+      ko: testBenchKO
+    }
+  },
 ]
+
+const title = {
+  en: 'Product',
+  ko: '제품소개'
+}
 
 function Product() {
   const { productId } = useParams()
   const navigate = useNavigate()
   const [activeId, setActiveId] = useState(products[0].id)
+  const { language, _ } = useLanguage();
 
   useEffect(() => {
     if (productId) {
@@ -58,7 +250,7 @@ function Product() {
   return (
     <main className="content">
       <HeroGallery />
-      <PageTitleBar title="Product" />
+      <PageTitleBar title={title[language]} />
       <div className="product-buttons">
         {products.map((product) => (
           <button
@@ -67,15 +259,17 @@ function Product() {
             className={`product-button${activeId === product.id ? ' active' : ''}`}
             onClick={() => handleSelect(product.id)}
           >
-            {product.name}
+            {product.name[language]}
           </button>
         ))}
       </div>
-      {activeProduct ? (
-        <div className="product-panel">
-          <img src={activeProduct.image} alt={activeProduct.name} className="product-visual" />
-        </div>
-      ) : null}
+      {  
+        activeProduct ? (
+          <div className="product-panel">
+            <img src={activeProduct.image[language]} alt={activeProduct.name[language]} className="product-visual" />
+          </div>
+        ) : null
+      }
     </main>
   )
 }
