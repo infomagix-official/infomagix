@@ -1,12 +1,26 @@
+import { useLanguage } from "../context/LanguageContext"
+
 function CustomerService() {
+  const { language, _ } = useLanguage();
   return (
     <section className="customer-service">
       <div className="cs-panel cs-panel--single">
-        <div>
-          <p className="cs-title">Customer Service</p>
-          <p className="cs-number">010-9061-3414</p>
-          <p className="cs-hours">Weekday 09:00 - 18:00</p>
-        </div>
+        {
+          language === 'en' ? (
+            <div>
+              <p className="cs-title">Customer Service</p>
+              <p className="cs-number">010-9061-3414</p>
+              <p className="cs-hours">Weekday 09:00 - 18:00</p>
+            </div>
+          ) : (
+            <div>
+              <p className="cs-title">견적문의</p>
+              <p className="cs-number">010-9061-3414</p>
+              <p className="cs-hours">평일 09:00 - 18:00</p>
+            </div>
+          )
+        }
+        
         {/* <div className="cs-actions">
           <Link to="/contact" className="btn btn-primary">
             Quote
