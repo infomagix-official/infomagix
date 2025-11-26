@@ -53,7 +53,8 @@ const businessTabs = [
   {
     id: 'product',
     label: {
-      ko: '주요품목'
+      ko: '주요품목',
+      en: 'product',
     },
     alt: '주요 품목'
   }
