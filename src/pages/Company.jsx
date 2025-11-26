@@ -1,37 +1,62 @@
 import { useMemo, useState } from 'react'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import companyHistoryImage from '../../assets/en/company/company_history.png'
-import companyOverviewImage from '../../assets/en/company/company_overview.png'
+import companyHistoryImageEN from '../../assets/en/company/company_history.png'
+import companyOverviewImageEN from '../../assets/en/company/company_overview.png'
+
+import companyHistoryImageKO from '../../assets/ko/company/company_history.png'
+import companyOverviewImageKO from '../../assets/ko/company/company_overview.png'
+import { useLanguage } from '../context/LanguageContext'
 
 const companyTabs = [
   {
     id: 'overview',
-    label: 'Company Overview',
-    image: companyOverviewImage,
+    label: {
+      en: 'Company Overview',
+      ko: '회사개요'
+    },
+    image: {
+      en: companyOverviewImageEN,
+      ko: companyOverviewImageKO,
+    },
     alt: 'Infomagix company overview montage',
   },
   {
     id: 'history',
-    label: 'Company History',
-    image: companyHistoryImage,
+    label: {
+      en: 'Company History',
+      ko: '회사연혁'
+    },
+    image: {
+      en: companyHistoryImageEN,
+      ko: companyHistoryImageKO
+    },
     alt: 'Infomagix company history collage',
   },
   {
     id: 'direction',
-    label: 'Direction',
+    label: {
+      en: 'Direction',
+      ko: '오시는 길'
+    },
   },
 ]
 
+const title = {
+  en: 'Company Info',
+  ko: '회사소개'
+}
+
 function Company() {
   const [activeTab, setActiveTab] = useState('overview')
+  const { language, _ } = useLanguage();
 
   const activeContent = useMemo(() => companyTabs.find((tab) => tab.id === activeTab), [activeTab])
 
   return (
     <main className="content">
       <HeroGallery />
-      <PageTitleBar title="Company Info" />
+      <PageTitleBar title={title[language]} />
       <div className="tabs">
         {companyTabs.map((tab) => (
           <button
@@ -40,7 +65,7 @@ function Company() {
             className={`tab-button${activeTab === tab.id ? ' active' : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            {tab.label}
+            {tab.label[language]}
           </button>
         ))}
       </div>
@@ -77,7 +102,7 @@ function Company() {
           </div>
         ) : (
           <div className="tab-panel image-only">
-            <img src={activeContent.image} alt={activeContent.alt} className="tab-visual" />
+            <img src={activeContent.image[language]} alt={activeContent.alt} className="tab-visual" />
           </div>
         )
       ) : null}

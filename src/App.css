@@ -54,7 +54,8 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 22px;
+  /* width: 200px; */
+  gap: 40px;
   font-size: 15px;
   letter-spacing: 0.02em;
 }
