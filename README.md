@@ -318,5 +318,3 @@ npm run build
 npx wrangler pages deploy dist
 ```
 출처: https://ko.vite.dev/guide/static-deploy
-
-ff
