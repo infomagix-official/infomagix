@@ -38,6 +38,8 @@ import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
 import testBenchKO from '../../assets/ko/product/testbench.png'
 import costDownTestServiceKO from '../../assets/ko/product/costdowntestservice.png'
 
+import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저항시험 안내.pdf'
+
 import { useLanguage } from '../context/LanguageContext'
 
 const products = [
@@ -50,7 +52,8 @@ const products = [
     image: {
       en: nvdsEN,
       ko: nvdsKO
-    }
+    },
+    file: []
   },
   { 
     id: 'pedal-robot',
@@ -61,7 +64,8 @@ const products = [
     image: {
       en: pedalRobotEN,
       ko: pedalRobotKO
-    }
+    },
+    file: []
       
   },
   { 
@@ -73,7 +77,8 @@ const products = [
     image: {
       en: gpsSpeedSensorVsdEN,
       ko: gpsSpeedSensorVsdKO
-    }
+    },
+    file: []
   },
   { 
     id: 'gps-vms-test-system', 
@@ -84,7 +89,8 @@ const products = [
     image: {
       en: gpsVmsTestSystemEN,
       ko: gpsVmsTestSystemKO
-    }
+    },
+    file: []
   },
   { 
     id: 'aps-drive-controller-vms3400', 
@@ -95,7 +101,8 @@ const products = [
     image: {
       en: apsDriveControllerEN,
       ko: apsDriveControllerKO 
-    }
+    },
+    file: []
   },
   { 
     id: 'vms-coastdown-testing', 
@@ -106,7 +113,13 @@ const products = [
     image: {
       en: vmsCoastdownTestingEN,
       ko: vmsCoastdownTestingKO
-    }
+    },
+    file: [
+      {
+        name: '251002인포매직스 주행저항시험 안내.pdf',
+        file: vmsCostdownFile
+      }
+    ]
   },
   {
     id: 'coastdown-test-service',
@@ -117,7 +130,8 @@ const products = [
     image: {
       en: costDownTestServiceEN,
       ko: costDownTestServiceKO
-    }
+    },
+    file: []
   },
   { 
     id: 'vms-vehicle-daq', 
@@ -128,7 +142,8 @@ const products = [
     image: {
       en: vmsVehicleDaqEN,
       ko: vmsVehicleDaqKO,
-    }
+    },
+    file: []
   },
   { 
     id: 'vehicle-drive-test-system',
@@ -139,7 +154,8 @@ const products = [
     image: {
       en: vehicleDriveTestSystemEN,
       ko: vehicleDriveTestSystemKO
-    }
+    },
+    file: []
   },
   { 
     id: 'vlog-data-logger', 
@@ -150,7 +166,8 @@ const products = [
     image: {
       en: vlogDataLoggerEN,
       ko: vlogDataLoggerKO
-    }
+    },
+    file: []
   },
   { 
     id: 'vcd-can-display', 
@@ -161,7 +178,8 @@ const products = [
     image: {
       en: vcdCanDisplayEN,
       ko: vcdCanDisplayKO
-    }
+    },
+    file: []
   },
   { 
     id: 'b2-daq-ad-board', 
@@ -172,7 +190,8 @@ const products = [
     image: {
       en: b2DaqAdBoardEN,
       ko: b2DaqAdBoardKO,
-    }
+    },
+    file: []
   },
   { 
     id: 'active-software', 
@@ -183,7 +202,8 @@ const products = [
     image: {
       en: activeSoftwareEN,
       ko: activeSoftwareKO
-    }
+    },
+    file: []
   },
   { 
     id: 'activeeye-software',
@@ -194,7 +214,8 @@ const products = [
     image: {
       en: activeeyeSoftwareEN,
       ko: activeeyeSoftwareKO
-    }
+    },
+    file: []
    },
   {
     id: 'chamber-control-daq',
@@ -205,7 +226,8 @@ const products = [
     image: {
       en: chamberControlBaqEN,
       ko: chamberControlBaqKO
-    }
+    },
+    file: []
   },
   { 
     id: 'test-bench', 
@@ -216,7 +238,8 @@ const products = [
     image: {
       en: testBenchEN,
       ko: testBenchKO
-    }
+    },
+    file: []
   },
 ]
 
@@ -267,6 +290,16 @@ function Product() {
         activeProduct ? (
           <div className="product-panel">
             <img src={activeProduct.image[language]} alt={activeProduct.name[language]} className="product-visual" />
+            {activeProduct.file && activeProduct.file.length > 0 ? (
+              <div className="product-files">
+                <div className="product-files-label">첨부파일</div>
+                {activeProduct.file.map((file) => (
+                  <a key={file.name} className="product-file" href={file.file} download>
+                    { file.name }
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : null
       }

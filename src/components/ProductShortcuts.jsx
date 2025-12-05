@@ -11,24 +11,59 @@ import vcd5 from '../../assets/en/shortcut/product_shortcut_vcd5.png'
 import vms from '../../assets/en/shortcut/product_shortcut_vms.png'
 import testBench from '../../assets/en/shortcut/product_shortcut_testbench.png'
 import software from '../../assets/en/shortcut/product_shortcut_software.png'
+import { useLanguage } from '../context/LanguageContext'
 
 const shortcuts = [
-  { name: 'Coastdown Test System', image: coastdown, slug: 'vms-coastdown-testing' },
-  { name: 'Performance Test System', image: performance, slug: 'gps-vms-test-system' },
-  { name: 'GPS + CAN Speed Sensor', image: gpscan, slug: 'gps-speed-sensor-vsd' },
-  { name: 'APS driver controller VMS3400', image: vms3400, slug: 'aps-drive-controller-vms3400' },
-  { name: 'A/D BOARD', image: adboard, slug: 'b2-daq-ad-board' },
-  { name: 'Pedal Robot', image: pedalRobot, slug: 'pedal-robot' },
-  { name: 'VLOG Data Logger', image: vlog, slug: 'vlog-data-logger' },
-  { name: 'VCD5 OBD Display, Perf. test', image: vcd5, slug: 'vcd-can-display' },
-  { name: 'VMS Measurement system', image: vms, slug: 'vms-vehicle-daq' },
-  { name: 'Test Bench', image: testBench, slug: 'test-bench' },
-  { name: 'Software', image: software, slug: 'active-software' },
+  { name: {
+    en: 'Coastdown Test System',
+    ko: '코스트다운 테스트 시스템'
+  }, image: coastdown, slug: 'vms-coastdown-testing' },
+  { name: {
+    en: 'Performance Test System',
+    ko: '성능 테스트 시스템'
+  }, image: performance, slug: 'gps-vms-test-system' },
+  { name: {
+    en: 'GPS + CAN Speed Sensor',
+    ko: 'GPS + CAN 속도 센서'
+  }, image: gpscan, slug: 'gps-speed-sensor-vsd' },
+  { name: {
+    en: 'APS driver controller VMS3400',
+    ko: 'APS 드라이버 컨트롤러 VMS3400'
+  }, image: vms3400, slug: 'aps-drive-controller-vms3400' },
+  { name: {
+    en: 'A/D BOARD',
+    ko: 'A/D 보드'
+  }, image: adboard, slug: 'b2-daq-ad-board' },
+  { name: {
+    en: 'Pedal Robot',
+    ko: '페달 로봇'
+  }, image: pedalRobot, slug: 'pedal-robot' },
+  { name: {
+    en: 'VLOG Data Logger',
+    ko: 'VLOG 데이터 로거'
+  }, image: vlog, slug: 'vlog-data-logger' },
+  { name: {
+    en: 'VCD5 OBD Display, Perf. test',
+    ko: 'VCD5 OBD 디스플레이, 성능. 테스트'
+  }, image: vcd5, slug: 'vcd-can-display' },
+  { name: {
+    en: 'VMS Measurement system',
+    ko: 'VMS 측정 시스템'
+  }, image: vms, slug: 'vms-vehicle-daq' },
+  { name: {
+    en: 'Test Bench',
+    ko: '테스트 벤치'
+  }, image: testBench, slug: 'test-bench' },
+  { name: {
+    en: 'Software',
+    ko: '소프트웨어'
+  }, image: software, slug: 'active-software' },
 ]
 
 function ProductShortcuts() {
   const [itemsPerView, setItemsPerView] = useState(6)
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(0);
+  const {language, _} = useLanguage();
 
   useEffect(() => {
     const updateItems = () => {
@@ -70,7 +105,7 @@ function ProductShortcuts() {
           {visibleItems.map((item) => (
             <Link key={item.slug} to={`/product/${item.slug}`} className="shortcut-card">
               <img src={item.image} alt={item.name} />
-              <div className="shortcut-name">{item.name}</div>
+              <div className="shortcut-name">{item.name[language]}</div>
             </Link>
           ))}
         </div>

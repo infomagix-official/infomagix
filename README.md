@@ -85,17 +85,21 @@
 ## 4. 공통 레이아웃 구성
 
 ### Header
+
 - 로고 + 네비게이션 메뉴
 - 상단 고정
 
 ### HeroGallery
+
 - 모든 서브 페이지에서 사용되는 타일형 이미지 영역
 - **사용자가 제공하는 원본 이미지를 그대로 사용**
 
 ### PageTitleBar
+
 - 좌측 파란 라인 + 페이지 명
 
 ### Footer
+
 - 회사 로고
 - 설립일, 대표자, 주소, 사업자등록번호
 - 이메일 / 연락처
@@ -151,8 +155,10 @@
 ### 5.4 Product (/product, /product/:productId)
 
 - Header + HeroGallery + PageTitleBar
+
 - 제품 버튼들
-  - 
+  -
+
 - 버튼 클릭 시 URL 파라미터 변경  
   예: `/product/mds`
 - 각 탭은 **단일 이미지 1장**
@@ -185,7 +191,6 @@
   - Test bench
     - 이미지 경로: assets > product > testbench.png
   
-
 - Footer
 
 ---
@@ -264,7 +269,6 @@ vite.config.js
 - `/dist`  
 - 서버에 `/dist` 폴더 그대로 업로드
 
-
 ## 10. (추가)product shortcut의 라우팅 주소
 
 - Costdown Test System
@@ -293,28 +297,35 @@ vite.config.js
 ## 0. ~~자동 배포 순서~~(Main 브랜치 병합 시 자동 통합 및 배포 발생함)
 
 ### 1. 리모트 레파지토리 클론
+
 ```bash
 git clone https://github.com/infomagix-official/infomagix
 ```
+
 > main 브랜치로의 병합 또는 푸시에 한해서 자동 빌드, 배포 발생
 
 ### 2. Wrangler CLI 설치(1회만)
+
 ```bash
 npm install -g wrangler
 ```
 
 ### 3. Cloudflare 계정으로 로그인하기
+
 ```bash
 wrangler login
 ```
 
 ### 4.빌드 명령 실행
+
 ```bash
 npm run build
 ```
 
 ## 배포하기
+
 ```bash
 npx wrangler pages deploy dist
 ```
-출처: https://ko.vite.dev/guide/static-deploy
+
+출처: <https://ko.vite.dev/guide/static-deploy>
