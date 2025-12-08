@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
-
 import nvdsEN from '../../assets/en/product/nvds.png'
 import pedalRobotEN from '../../assets/en/product/pedalrobot.png'
 import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
@@ -21,7 +20,7 @@ import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
 import testBenchEN from '../../assets/en/product/testbench.png'
 import costDownTestServiceEN from '../../assets/ko/product/costdowntestservice.png'
 
-import nvdsKO from '../../assets/ko/product/nvds.png'
+import nvdsKO from '../../assets/ko/product/nvds.jpg'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
 import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
@@ -37,12 +36,63 @@ import activeeyeSoftwareKO from '../../assets/ko/product/activeeyesoftware.png'
 import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
 import testBenchKO from '../../assets/ko/product/testbench.png'
 import costDownTestServiceKO from '../../assets/ko/product/costdowntestservice.png'
+// import adasTestSystem
+// import testServiceEngineering
 
 import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저항시험 안내.pdf'
 
 import { useLanguage } from '../context/LanguageContext'
 
+import NVDS from '../components/product/NVDS'
+import ADASTestSystem from '../components/product/ADASTestSystem'
+import TestServiceEngineering from '../components/product/TestServiceEngineering'
+import PedalRobot from '../components/product/PedalRobot'
+import GPSSpeedSensorVSD from '../components/product/GPSSpeedSensorVSD'
+import APSDriveControllerVMS3400 from '../components/product/APSDriveControllerVMS3400'
+import GPSVMSTestSystem from '../components/product/GPSVMSTestSystem'
+import VMSCoastDownTesting from '../components/product/VMSCoastDownTesting'
+import VMSCoastDownTestService from '../components/product/VMSCoastDownTestService'
+import VMSVehicleDAQ from '../components/product/VMSVehicleDAQ'
+import VehicleDriveTestSystem from '../components/product/VehicleDriveTestSystem'
+import VLOGDataLogger from '../components/product/VLOGDataLogger'
+import VCDCANDisplay from '../components/product/VCDCANDisplay'
+import B2DAQADBoard from '../components/product/B2DAQADBoard'
+import ActiveSoftware from '../components/product/ActiveSoftware'
+import ActiveEyeSoftware from '../components/product/ActiveEyeSoftware'
+import ChamberControlDAQ from '../components/product/ChamberControlDAQ'
+import TestBench from '../components/product/TestBench'
+
+let refine = true;
+
 const products = [
+  {
+    id: 'ADAS-Test-System',
+    name: {
+      en: 'ADAS Test System',
+      ko: 'ADAS 테스트 시스템',
+    },
+    image: {
+      en: null,
+      ko: null,
+      // en: adasTestSystemEN,
+      // ko: adasTestSystemKO
+    },
+    file: [],
+    component: ADASTestSystem,
+  },
+  {
+    id: 'Test-Service-Engineering',
+    name: {
+      en: 'Test Service Engineering',
+      ko: '테스트 서비스 엔지니어링'
+    },
+    image: {
+      en: null,
+      ko: null,
+    },
+    file: [],
+    component: TestServiceEngineering,
+  },
   { 
     id: 'nvds',
     name: {
@@ -53,7 +103,8 @@ const products = [
       en: nvdsEN,
       ko: nvdsKO
     },
-    file: []
+    file: [],
+    component: NVDS
   },
   { 
     id: 'pedal-robot',
@@ -65,8 +116,8 @@ const products = [
       en: pedalRobotEN,
       ko: pedalRobotKO
     },
-    file: []
-      
+    file: [],
+    component: PedalRobot,
   },
   { 
     id: 'gps-speed-sensor-vsd',
@@ -78,7 +129,8 @@ const products = [
       en: gpsSpeedSensorVsdEN,
       ko: gpsSpeedSensorVsdKO
     },
-    file: []
+    file: [],
+    component: GPSSpeedSensorVSD,
   },
   { 
     id: 'gps-vms-test-system', 
@@ -90,7 +142,8 @@ const products = [
       en: gpsVmsTestSystemEN,
       ko: gpsVmsTestSystemKO
     },
-    file: []
+    file: [],
+    component: GPSVMSTestSystem,
   },
   { 
     id: 'aps-drive-controller-vms3400', 
@@ -102,7 +155,8 @@ const products = [
       en: apsDriveControllerEN,
       ko: apsDriveControllerKO 
     },
-    file: []
+    file: [],
+    component: APSDriveControllerVMS3400
   },
   { 
     id: 'vms-coastdown-testing', 
@@ -119,7 +173,8 @@ const products = [
         name: '251002인포매직스 주행저항시험 안내.pdf',
         file: vmsCostdownFile
       }
-    ]
+    ],
+    component: VMSCoastDownTesting,
   },
   {
     id: 'coastdown-test-service',
@@ -131,7 +186,8 @@ const products = [
       en: costDownTestServiceEN,
       ko: costDownTestServiceKO
     },
-    file: []
+    file: [],
+    component: VMSCoastDownTestService,
   },
   { 
     id: 'vms-vehicle-daq', 
@@ -143,7 +199,8 @@ const products = [
       en: vmsVehicleDaqEN,
       ko: vmsVehicleDaqKO,
     },
-    file: []
+    file: [],
+    component: VMSVehicleDAQ,
   },
   { 
     id: 'vehicle-drive-test-system',
@@ -155,7 +212,8 @@ const products = [
       en: vehicleDriveTestSystemEN,
       ko: vehicleDriveTestSystemKO
     },
-    file: []
+    file: [],
+    component: VehicleDriveTestSystem,
   },
   { 
     id: 'vlog-data-logger', 
@@ -167,7 +225,8 @@ const products = [
       en: vlogDataLoggerEN,
       ko: vlogDataLoggerKO
     },
-    file: []
+    file: [],
+    component: VLOGDataLogger
   },
   { 
     id: 'vcd-can-display', 
@@ -179,7 +238,8 @@ const products = [
       en: vcdCanDisplayEN,
       ko: vcdCanDisplayKO
     },
-    file: []
+    file: [],
+    component: VCDCANDisplay
   },
   { 
     id: 'b2-daq-ad-board', 
@@ -191,7 +251,8 @@ const products = [
       en: b2DaqAdBoardEN,
       ko: b2DaqAdBoardKO,
     },
-    file: []
+    file: [],
+    component: B2DAQADBoard
   },
   { 
     id: 'active-software', 
@@ -203,7 +264,8 @@ const products = [
       en: activeSoftwareEN,
       ko: activeSoftwareKO
     },
-    file: []
+    file: [],
+    component: ActiveSoftware
   },
   { 
     id: 'activeeye-software',
@@ -215,7 +277,8 @@ const products = [
       en: activeeyeSoftwareEN,
       ko: activeeyeSoftwareKO
     },
-    file: []
+    file: [],
+    component: ActiveEyeSoftware
    },
   {
     id: 'chamber-control-daq',
@@ -227,7 +290,8 @@ const products = [
       en: chamberControlBaqEN,
       ko: chamberControlBaqKO
     },
-    file: []
+    file: [],
+    component: ChamberControlDAQ
   },
   { 
     id: 'test-bench', 
@@ -239,7 +303,8 @@ const products = [
       en: testBenchEN,
       ko: testBenchKO
     },
-    file: []
+    file: [],
+    component: TestBench,
   },
 ]
 
@@ -264,6 +329,7 @@ function Product() {
   }, [productId])
 
   const activeProduct = useMemo(() => products.find((p) => p.id === activeId), [activeId])
+  const ActiveComponent = useMemo(() => products.find((p) => p.id === activeId)['component'], [activeId, refine])
 
   const handleSelect = (id) => {
     setActiveId(id)
@@ -290,6 +356,10 @@ function Product() {
         activeProduct ? (
           <div className="product-panel">
             <img src={activeProduct.image[language]} alt={activeProduct.name[language]} className="product-visual" />
+            {
+              refine ? <ActiveComponent /> : null
+            }
+
             {activeProduct.file && activeProduct.file.length > 0 ? (
               <div className="product-files">
                 <div className="product-files-label">첨부파일</div>

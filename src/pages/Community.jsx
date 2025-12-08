@@ -1,7 +1,7 @@
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
-import communityImageEN from '../../assets/en/community/community.png'
-import communityImageKO from '../../assets/ko/community/community.png'
+import communityImageEN from '../../assets/en/community/community.jpg'
+import communityImageKO from '../../assets/ko/community/community.jpg'
 import { useLanguage } from '../context/LanguageContext'
 
 const title = {

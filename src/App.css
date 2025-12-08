@@ -5,7 +5,7 @@
   --border: #e4e8f0;
   --surface: #ffffff;
   --shadow: 0 12px 30px rgba(19, 42, 70, 0.08);
-  font-family: "맑은 고딕", "Malgun Gothic", "돋움", dotum, "Segoe UI", sans-serif;
+  /* font-family: "맑은 고딕", "Malgun Gothic", "돋움", dotum, "Segoe UI", sans-serif; */
 }
 
 #root {
@@ -657,4 +657,99 @@
   .tab-panel.direction-panel {
     grid-template-columns: 1fr;
   }
+}
+
+.product-container {
+  max-width: 1100px;
+  /* margin: 0 auto; */
+  padding: 40px 20px;
+  line-height: 1.7;
+}
+
+.product-block {
+  margin-bottom: 24px;
+}
+
+.product-section {
+  margin-bottom: 48px;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.product-list {
+  padding-left: 48px;
+}
+
+.product-list li {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.product-text {
+  font-size: 20px;
+}
+
+.main-title {
+  /* font-size: 30px; */
+  /* font-weight: 700; */
+  margin-bottom: 16px;
+  color: #1f4f8a;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* SignalTable.css */
+
+.table-wrapper {
+  margin: 24px 0;
+  overflow-x: auto; /* 작은 화면에서 좌우 스크롤 */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.6;
+  table-layout: fixed; /* 컬럼 폭 균등 분배 */
+}
+
+.table th,
+.table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px 14px;
+  vertical-align: middle
+}
+
+/* 헤더 스타일 (연한 파란색 배경) */
+.table thead th {
+  background-color: #e7eef9;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 본문 줄 배경 살짝 번갈아가며 */
+.table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* 첫 번째 컬럼은 약간 굵게 */
+.table tbody td:first-child {
+  font-weight: 500;
+  width: 18%;
+}
+
+/* 기타 컬럼은 좁게 */
+.table tbody td:last-child,
+.table thead th:last-child {
+  width: 10%;
+  text-align: center;
 }
