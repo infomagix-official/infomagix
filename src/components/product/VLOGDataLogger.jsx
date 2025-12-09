@@ -19,7 +19,14 @@ const VLOGDataLogger = () => {
         </div>
       </section>
 
-      
+      <h2 style={{
+        background: "red"
+      }}>image1</h2>
+
+      <h2 style={{
+        background: "red"
+      }}>image2</h2>
+
       <section class="product-section">
         <div class="product-block">
           <p class="product-text">
@@ -43,6 +50,13 @@ const VLOGDataLogger = () => {
         </div>
       </section>
 
+      <h2 style={{
+        background: "red"
+      }}>image3</h2>
+
+      <h2 style={{
+        background: "red"
+      }}>image4</h2>
       
       <section class="product-section">
         <div class="product-block">
@@ -66,6 +80,10 @@ const VLOGDataLogger = () => {
           </p>
         </div>
       </section>
+
+      <h2 style={{
+        background: "red"
+      }}>image4</h2>
 
       
       <section class="product-section">
@@ -108,6 +126,14 @@ const VLOGDataLogger = () => {
           </p>
         </div>
       </section>
+
+      <h2 style={{
+        background: "red"
+      }}>image5</h2>
+
+      <h2 style={{
+        background: "red"
+      }}>image6</h2>
     </div>
   )
 }

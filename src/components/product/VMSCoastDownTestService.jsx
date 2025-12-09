@@ -20,14 +20,18 @@ export default function VMSCoastDownTestService() {
         </ul>
       </section>
 
+      <h2 style={{
+        background: "red"
+      }}>image1</h2>
+
       <section className="product-section">
         <h2 className="product-title">1. 시험 진행을 위한 의뢰자의 준비 사항</h2>
         <ul className="product-list">
-          <li>A. 시험차량의 등가관성중량</li>
-          <li>B. 추가 적재 Weight 준비</li>
-          <li>C. 차량의 전면 투영면적(A)</li>
-          <li>D. 차량 제원표</li>
-          <li>E. 시험에 맞는 차량 상태(주행거리 축적) 유지</li>
+          <li>시험차량의 등가관성중량</li>
+          <li>추가 적재 Weight 준비</li>
+          <li>차량의 전면 투영면적(A)</li>
+          <li>차량 제원표</li>
+          <li>시험에 맞는 차량 상태(주행거리 축적) 유지</li>
         </ul>
       </section>
 
@@ -55,36 +59,36 @@ export default function VMSCoastDownTestService() {
         <h2 className="product-title">4. 시험 조건</h2>
 
         <h3 className="product-subtitle">A. 환경 조건</h3>
-        <ul className="product-list">
-          <li>i. 시험도로의 대기온도는 5℃~35℃ 이내여야 합니다.</li>
+        <ol className="product-list">
+          <li>시험도로의 대기온도는 5℃~35℃ 이내여야 합니다.</li>
           <li>
-            ii. 시험시 평균풍속이 16km/h 또는 최고풍속이 20km/h를 초과하거나
+            시험시 평균풍속이 16km/h 또는 최고풍속이 20km/h를 초과하거나
             시험도로에 직각성분의 풍속이 8km/h를 초과해서는 안됩니다.
             다만, 시험자동차에 직접 탑재식 기상계를 장착한 경우에는
             평균 풍속이 35km/h 또는 최고 풍속이 50km/h를 초과해서는 안됩니다.
           </li>
-        </ul>
+        </ol>
 
         <h3 className="product-subtitle">B. 시험자동차 조건</h3>
-        <ul className="product-list">
+        <ol className="product-list">
           <li>
-            i. 시험자동차의 타이어 규격, 전면 투영면적 측정을 위한 완충장치의 높이 등은
+            시험자동차의 타이어 규격, 전면 투영면적 측정을 위한 완충장치의 높이 등은
             제작자 권장 규격으로 하며, 에너지소비효율, 온실가스 배출량 및 연료소비율을
             측정할 자동차와 동일한 사양의 타이어를 사용하여 주행저항시험을 실시하여야 합니다.
           </li>
-        </ul>
+        </ol>
 
         <h3 className="product-subtitle">C. 주행저항 시험방법</h3>
-        <ul className="product-list">
-          <li>i. 왕복으로 5회 이상 각 방향 5회 이상 주행합니다.</li>
+        <ol className="product-list">
+          <li>왕복으로 5회 이상 각 방향 5회 이상 주행합니다.</li>
           <li>
-            ii. 각각의 타행주행시험은 측정구간에 대해 중단 없이 한번에 실시합니다.
+            각각의 타행주행시험은 측정구간에 대해 중단 없이 한번에 실시합니다.
             다만, 시험도로의 여건(불충분한 시험도로 길이)으로 인해 한번에 시험을
             실시할 수 없는 경우는 측정속도 구간을 분리하여 시험할 수 있습니다.
             이 경우 분리하고자 하는 속도보다 최소 15km/h 이상 차속을 올린 후
             측정을 실시합니다.
           </li>
-        </ul>
+        </ol>
       </section>
 
       <section className="product-section">
@@ -104,17 +108,35 @@ export default function VMSCoastDownTestService() {
         </ul>
       </section>
 
+      <h2 style={{
+        background: "red"
+      }}>image2</h2>
+
       <section className="product-section">
+        <h2 className="product-title">6. 차량에 설치하는 장비 안내</h2>
+      </section>
+
+      <h2 style={{
+        background: "red"
+      }}>image3</h2>
+
+      <section className="product-section">
+        <h2 className="product-title">데이터 취득 유닛</h2>
+        <h2 style={{
+          background: "red"
+        }}>image3</h2>
         <ul className="product-list">
           <li>
             자체 동작 CPU를 내장하고, 전 채널 10kHz 이상 동시 샘플링 측정하여,
             외부 PC와 LAN 통신으로 연결되어, PC 프로그램(ActiveVT)과 연동하여
             독립적으로 시험이 가능하게 구성되어 있습니다.
           </li>
-          <li>i. 100Hz GPS 속도센서 내장</li>
-          <li>ii. Analog Input ±20V</li>
-          <li>iii. Frequency Input : TTL level signal input</li>
-          <li>iv. 전용 센서 커넥터 구성(속도센서, 풍향풍속센서, 대기온)</li>
+          <ul>
+            <li>100Hz GPS 속도센서 내장</li>
+            <li>Analog Input ±20V</li>
+            <li>Frequency Input : TTL level signal input</li>
+            <li>전용 센서 커넥터 구성(속도센서, 풍향풍속센서, 대기온)</li>
+          </ul>
         </ul>
       </section>
 
@@ -126,16 +148,28 @@ export default function VMSCoastDownTestService() {
             100Hz GPS 속도센서를 기반으로 시험을 진행하며, 시험장의 환경상황 등
             부득이한 경우 별도의 광학식 속도센서를 이용하여 시험을 진행할 수 있습니다.
           </li>
-          <li>i. 100Hz GPS 속도센서</li>
-          <li>1. 속도측정 범위 : 0~360kph</li>
-          <li>2. 거리측정 분해능 : 1mm 거리측정 정도</li>
-          <li>ii. 광학식 속도센서</li>
-          <li>
-            광학식 속도센서는 Suction Cup 이 관절로 연결된 하나의 고정구조로 이루어진
-            전용 거치대를 사용하여 차량 후면에 아래와 장착하여 차량의 속도를 측정합니다.
-          </li>
+          <ul>
+            <li>100Hz GPS 속도센서</li>
+            <li>속도측정 범위 : 0~360kph</li>
+            <li>거리측정 분해능 : 1mm 거리측정 정도</li>
+            <li>광학식 속도센서</li>
+            <li>
+              광학식 속도센서는 Suction Cup 이 관절로 연결된 하나의 고정구조로 이루어진
+              전용 거치대를 사용하여 차량 후면에 아래와 장착하여 차량의 속도를 측정합니다.
+            </li>
+            <h2 style={{
+              background: "red"
+            }}>image4</h2>
+
+            <li>속도 측정 범위 : 0~250kph</li>
+            <li>거리측정 분해능 : 1.5mm 거리측정 정도</li>
+          </ul>
         </ul>
       </section>
+
+      <h2 style={{
+        background: "red"
+      }}>image5</h2>
 
       <section className="product-section">
         <h2 className="product-title">C. 풍향/풍속계</h2>
@@ -145,8 +179,10 @@ export default function VMSCoastDownTestService() {
             감당할 수 있는 만능 거치대로 연결파이프 및 차량부착 고정대 및
             부속 와이어 및 연결 고리 커넥터가 일체로 조립된 형태로 구성되어 있습니다.
           </li>
-          <li>i. 풍속측정 범위 : 0~200kph / 정밀도 : ±0.2m/s 이내</li>
-          <li>ii. 풍향측정 범위 : 0~355°, 정밀도 : ±3° 이내</li>
+          <ul>
+            <li>풍속측정 범위 : 0~200kph / 정밀도 : ±0.2m/s 이내</li>
+            <li>풍향측정 범위 : 0~355°, 정밀도 : ±3° 이내</li>
+          </ul>
         </ul>
       </section>
 
