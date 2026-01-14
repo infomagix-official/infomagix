@@ -115,10 +115,10 @@ const products = [
       ko: vmsCoastdownTestingKO
     },
     file: [
-      {
-        name: '251002인포매직스 주행저항시험 안내.pdf',
-        file: vmsCostdownFile
-      }
+      //{
+      //  name: '251002인포매직스 주행저항시험 안내.pdf',
+      //  file: vmsCostdownFile
+      //}
     ]
   },
   {
