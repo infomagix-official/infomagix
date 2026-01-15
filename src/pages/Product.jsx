@@ -45,6 +45,13 @@ import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저�
 
 import { useLanguage } from '../context/LanguageContext'
 
+const baseUrl = import.meta.env.BASE_URL ?? '/'
+const resolveMarkdownSrc = (src) => {
+  if (!src || typeof src !== 'string' || !src.startsWith('/')) return src
+  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
+  return `${normalizedBase}${src.replace(/^\/+/, '')}`
+}
+
 const products = [
   { 
     id: 'nvds',
@@ -294,8 +301,9 @@ function Product() {
       const scaledWidth = widthValue ? `calc(${widthValue} / 1.1111)` : undefined
       const style = scaledWidth ? { width: scaledWidth, maxWidth: scaledWidth } : undefined
       const className = `${props.className ?? ''}${widthValue ? ' md-image-centered' : ''}`.trim()
+      const resolvedSrc = resolveMarkdownSrc(props.src)
 
-      return <img {...props} alt={cleanedAlt} style={style} className={className || undefined} />
+      return <img {...props} src={resolvedSrc} alt={cleanedAlt} style={style} className={className || undefined} />
     },
   }), [])
 
