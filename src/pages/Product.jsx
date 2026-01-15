@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, Children, isValidElement } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
@@ -19,7 +20,8 @@ import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
 import activeeyeSoftwareEN from '../../assets/en/product/activeeyesoftware.png'
 import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
 import testBenchEN from '../../assets/en/product/testbench.png'
-import costDownTestServiceEN from '../../assets/en/product/costdowntestservice.png'
+import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.md?raw'
+import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
 
 import nvdsKO from '../../assets/ko/product/nvds.png'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
@@ -36,7 +38,8 @@ import activeSoftwareKO from '../../assets/ko/product/activesoftware.png'
 import activeeyeSoftwareKO from '../../assets/ko/product/activeeyesoftware.png'
 import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
 import testBenchKO from '../../assets/ko/product/testbench.png'
-import costDownTestServiceKO from '../../assets/ko/product/costdowntestservice.png'
+import costDownTestServiceKO from '../../assets/ko/product/coastdowntestservice.md?raw'
+import productMarkdownStylesKO from '../../assets/ko/product/styles.css?url'
 
 import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저항시험 안내.pdf'
 
@@ -127,7 +130,7 @@ const products = [
       en: 'costdown test service',
       ko: '주행저항시험용역',
     },
-    image: {
+    markdown: {
       en: costDownTestServiceEN,
       ko: costDownTestServiceKO
     },
@@ -264,6 +267,59 @@ function Product() {
   }, [productId])
 
   const activeProduct = useMemo(() => products.find((p) => p.id === activeId), [activeId])
+  const markdownContent = activeProduct?.markdown?.[language]
+  const markdownStyleUrl = language === 'ko' ? productMarkdownStylesKO : productMarkdownStylesEN
+
+  const markdownComponents = useMemo(() => ({
+    p: ({ children, ...props }) => {
+      const nodes = Children.toArray(children)
+      const isImageNode = (node) => isValidElement(node) && (node.type === 'img' || node.props?.node?.tagName === 'img')
+      const hasOnlyImages = nodes.length > 0 && nodes.every((node) => {
+        if (typeof node === 'string') return node.trim() === ''
+        return isImageNode(node)
+      })
+      const imageCount = nodes.filter(isImageNode).length
+
+      if (hasOnlyImages && imageCount > 1) {
+        return <div className="md-image-row">{nodes}</div>
+      }
+
+      return <p {...props}>{children}</p>
+    },
+    img: ({ alt, ...props }) => {
+      const altText = typeof alt === 'string' ? alt : ''
+      const widthMatch = altText.match(/\bw=([0-9]+(?:\.[0-9]+)?)%?\b/i)
+      const widthValue = widthMatch ? `${widthMatch[1]}%` : null
+      const cleanedAlt = widthMatch ? altText.replace(widthMatch[0], '').trim() : altText
+      const scaledWidth = widthValue ? `calc(${widthValue} / 1.1111)` : undefined
+      const style = scaledWidth ? { width: scaledWidth, maxWidth: scaledWidth } : undefined
+      const className = `${props.className ?? ''}${widthValue ? ' md-image-centered' : ''}`.trim()
+
+      return <img {...props} alt={cleanedAlt} style={style} className={className || undefined} />
+    },
+  }), [])
+
+  useEffect(() => {
+    const linkId = 'product-markdown-style'
+    const existing = document.getElementById(linkId)
+
+    if (!markdownContent) {
+      if (existing) existing.remove()
+      return
+    }
+
+    const link = existing ?? document.createElement('link')
+    if (!existing) {
+      link.rel = 'stylesheet'
+      link.id = linkId
+      document.head.appendChild(link)
+    }
+    link.href = markdownStyleUrl
+
+    return () => {
+      if (link.parentNode) link.parentNode.removeChild(link)
+    }
+  }, [markdownContent, markdownStyleUrl])
 
   const handleSelect = (id) => {
     setActiveId(id)
@@ -289,7 +345,15 @@ function Product() {
       {  
         activeProduct ? (
           <div className="product-panel">
-            <img src={activeProduct.image[language]} alt={activeProduct.name[language]} className="product-visual" />
+            {markdownContent ? (
+              <div className="product-markdown">
+                <ReactMarkdown components={markdownComponents}>{markdownContent}</ReactMarkdown>
+              </div>
+            ) : (
+              activeProduct.image?.[language] ? (
+                <img src={activeProduct.image[language]} alt={activeProduct.name[language]} className="product-visual" />
+              ) : null
+            )}
             {activeProduct.file && activeProduct.file.length > 0 ? (
               <div className="product-files">
                 <div className="product-files-label">첨부파일</div>
