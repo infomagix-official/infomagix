@@ -1,0 +1,107 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+.product-markdown {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 120%;
+  transform: scaleX(0.9);
+  transform-origin: 0 0;
+  width: 111.1111%;
+  position: relative;
+}
+
+.product-markdown::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  width: 54%;
+  height: 192px;
+  background: url("./background.png") no-repeat left top / contain;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+  transform: translateX(-50%) scaleX(1.1111);
+  transform-origin: 0 0;
+}
+
+.product-markdown h1 {
+  font-size: 120%;
+  color: #1f4f8a;
+  margin-bottom: 0.6rem;
+}
+
+.product-markdown h1::after {
+  content: "";
+  display: block;
+  height: 31px;
+  margin-top: 47px;
+  margin-bottom: 32px;
+  width: 90%;
+  background-image: url("./divider-left.png"), url("./divider-center.png"), url("./divider-right.png");
+  background-repeat: no-repeat, repeat-x, no-repeat;
+  background-position: left center, center center, right center;
+  background-size: auto 100%, auto 100%, auto 100%;
+  transform: scaleX(1.1111);
+  transform-origin: 0 50%;
+}
+
+.product-markdown h2 {
+  font-size: 100%;
+  margin-left: 1rem;
+  position: relative;
+  padding-left: 44px;
+}
+
+.product-markdown h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 31px;
+  height: 31px;
+  background: url("./paragraph_mark.webp") no-repeat center / contain;
+  transform: scaleX(1.1111);
+  transform-origin: 0 50%;
+}
+
+.product-markdown h3 {
+  font-size: 100%;
+  margin-left: 2rem;
+}
+
+.product-markdown h4 {
+  font-size: 100%;
+  margin-left: 3rem;
+}
+
+.product-markdown ul,
+.product-markdown ol {
+  margin-left: 1rem;
+}
+
+.product-markdown img {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  transform: scaleX(1.1111);
+  transform-origin: 0 0;
+}
+
+.product-markdown img.md-image-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-markdown .md-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 12px 0;
+}
+
+.product-markdown .md-image-row img {
+  width: auto;
+  max-width: 100%;
+}
