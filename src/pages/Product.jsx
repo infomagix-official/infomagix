@@ -19,7 +19,7 @@ import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
 import activeeyeSoftwareEN from '../../assets/en/product/activeeyesoftware.png'
 import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
 import testBenchEN from '../../assets/en/product/testbench.png'
-import costDownTestServiceEN from '../../assets/ko/product/costdowntestservice.png'
+import costDownTestServiceEN from '../../assets/en/product/costdowntestservice.png'
 
 import nvdsKO from '../../assets/ko/product/nvds.png'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
