@@ -17,9 +17,9 @@ With GPS update rates of 20Hz or 100Hz, the VCD-5 is to be used for various test
 
 The VCD-5 device provides corrected CAN speed by comparing the vehicle speed from CAN data and the GPS speed, and can measure the accurate vehicle speed seamlessly during running using the CAN speed corrected with GPS
 
-![VCD5-Test w=45%](/assets/en/product/vcd5_test_screen.webp) ![VCD5-CAN w=45%](/assets/en/product/vcd5_can_screen.webp)
+![VCD5 Test w=45%](/assets/en/product/vcd5_test_screen.webp) ![VCD5 CAN w=45%](/assets/en/product/vcd5_can_screen.webp)
 
-## <CENTER>VCD-5 GPS</CENTER>
+## VCD-5 GPS/LOG
 
 ---
 

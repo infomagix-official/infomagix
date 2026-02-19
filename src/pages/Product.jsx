@@ -185,7 +185,7 @@ const products = [
       en: 'VCD CAN display',
       ko: 'VCD CAN display',
     }, 
-    image: {
+    markdown: {
       en: vcdCanDisplayEN,
       ko: vcdCanDisplayKO
     },

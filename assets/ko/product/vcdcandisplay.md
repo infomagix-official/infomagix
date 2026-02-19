@@ -17,9 +17,9 @@ VCD-5는 CAN 입력을 통해 차량 거동 데이터와 GPS를 통한 운전 �
 
 VCD-5는 GPS 로 보정된 차량 CAN속도를 제공합니다. 차량 CAN 속도와 실제 GPS 속도를 비교하고, GPS 속도로 보정 된 CAN속도와를 구하고, GPS 속도 와 CAN 속도 간의 자동 전환 기능을 이용하여, GPS 를 사용할 수 없는 구간에서도, 시험 중 중단 없이 정확한 차량 속도를 측정 할 수 있습니다.
 
-![VCD5-Test w=45%](/assets/en/product/vcd5_test_screen.webp) ![VCD5-CAN w=45%](/assets/en/product/vcd5_can_screen.webp)
+![VCD5 Test w=45%](/assets/en/product/vcd5_test_screen.webp) ![VCD5 CAN w=45%](/assets/en/product/vcd5_can_screen.webp)
 
-## <CENTER>VCD-5 GPS</CENTER>
+## VCD-5 GPS/LOG
 
 ---
 
