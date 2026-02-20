@@ -36,7 +36,7 @@ const companyTabs = [
   {
     id: 'direction',
     label: {
-      en: 'Direction',
+      en: 'Location & Directions',
       ko: '오시는 길'
     },
   },

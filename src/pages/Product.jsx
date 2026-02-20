@@ -5,7 +5,7 @@ import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
 
-import nvdsEN from '../../assets/en/product/nvds.png'
+import nvdsEN from '../../assets/en/product/nvds.md?raw'
 import pedalRobotEN from '../../assets/en/product/pedalrobot.png'
 import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemEN from '../../assets/en/product/gpsvmstestsystem.png'
@@ -23,7 +23,7 @@ import testBenchEN from '../../assets/en/product/testbench.png'
 import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.md?raw'
 import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
 
-import nvdsKO from '../../assets/ko/product/nvds.png'
+import nvdsKO from '../../assets/ko/product/nvds.md?raw'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
 import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
@@ -59,7 +59,7 @@ const products = [
       en: 'NVDS',
       ko: 'NVDS'
     }, 
-    image: {
+    markdown: {
       en: nvdsEN,
       ko: nvdsKO
     },

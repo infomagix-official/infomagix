@@ -1,9 +1,9 @@
 # VCD CAN display and Performance test
 
-The VCD-5 is a standalone vehicle CAN display device with 100Hz GPS and 5" LCD display embedded. The VCD-5 enables to collect and display vehicle CAN data and to perform vehicle monitoring based on vehicle CAN and GPS data. It provides functions of vehicle CAN data monitoring with DBC file and J1979 protocol support. The VCD-5 produces vehicle speed and distance output from 100Hz GPS data and CAN speed corrected with GPS. 
-With providing CAN data logging function of both continuous logging and the trigger based logging, it is convenient to collect vehicle field data through CAN input. Furthermore, the device makes it easy to get data on vehicle behavior and driving traces from GPS data.
+The VCD-5 is a standalone vehicle CAN display device with 100Hz GPS and 5" LCD display embedded. The VCD-5 enables users to collect and display vehicle CAN data and to perform vehicle monitoring based on vehicle CAN and GPS data. It provides functions of vehicle CAN data monitoring with DBC file and J1979 protocol support. The VCD-5 produces vehicle speed and distance output from 100Hz GPS data and CAN speed corrected with GPS. 
+The VCD‑5 supports both continuous and trigger‑based CAN data logging, making field data collection more convenient. Furthermore, the device makes it easy to obtain data on vehicle behavior and driving traces from GPS data.
 
-The VCD-5 is a GPS-embedded speed sensor with a 5" LCD display and CAN data logging device, which can collect vehicle road data and perform vehicle monitoring based on vehicle CAN and GPS data..
+The VCD-5 is a GPS-integrated speed sensor with a 5" LCD display and CAN data logging device, which can collect vehicle driving data and perform vehicle monitoring based on vehicle CAN and GPS data.
 
 ![VCD5-GPS/LOG](/assets/en/product/vcd5_gps_log.webp)
 
@@ -11,9 +11,9 @@ The VCD-5 is a GPS-embedded speed sensor with a 5" LCD display and CAN data logg
 
 The VCD-5 provides functions such as vehicle status monitoring with vehicle CAN data, fuel consumption monitoring during running.
 
-The VCD-5 produces vehicle speed and distance output from 100Hz GPS data. With providing CAN data logging function of both continuous logging and the trigger based logging, it is convenient to collect field data. Furthermore, the system makes it easy to get data on vehicle behavior and driving traces from GPS data
+The VCD-5 produces vehicle speed and distance output from 100Hz GPS data. The VCD‑5 supports both continuous and trigger‑based CAN data logging, making field data collection more convenient. Furthermore, the system makes it easy to acquire data on vehicle behavior and driving traces from GPS data
 
-With GPS update rates of 20Hz or 100Hz, the VCD-5 is to be used for various test applications and data output via CAN or analog and pulse output, it could replace traditional optical speed sensor.
+With GPS update rates of 20Hz or 100Hz, the VCD-5 can be used for various test applications and data output via CAN or analog and pulse output, it could replace traditional optical speed sensor.
 
 The VCD-5 device provides corrected CAN speed by comparing the vehicle speed from CAN data and the GPS speed, and can measure the accurate vehicle speed seamlessly during running using the CAN speed corrected with GPS
 
@@ -26,7 +26,7 @@ The VCD-5 device provides corrected CAN speed by comparing the vehicle speed fro
 ### ▶ Provided function
 
 - Vehicle ECU CAN data and GPS data monitoring
-- Provision of performance test function ie, Accel test, Brake test, Lap time test, Max speed test.
+- Provision of performance test function i.e., Acceleration test, Brake test, Lap time test, Max speed test.
 - Simultaneous provision of GPS speed and CAN speed
 - Provision of accurate CAN speed corrected with GPS
 - A screen displaying the real-time condition of vehicle running and behavior
@@ -40,7 +40,7 @@ The VCD-5 device provides corrected CAN speed by comparing the vehicle speed fro
 - 100Hz vehicle speed output with 100Hz GPS
 - Fuel efficiency computer
 - Storage of data calculated from input CAN data and logic
-- Manipulated input of remote controller, etc. for data trigger input signals
+- Processes remote‑controller input and other signals for data‑trigger inputs.
 
 ## Specifications
 
