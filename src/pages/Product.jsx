@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState, Children, isValidElement } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
 
 import nvdsEN from '../../assets/en/product/nvds.md?raw'
-import pedalRobotEN from '../../assets/en/product/pedalrobot.png'
+import pedalRobotEN from '../../assets/en/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemEN from '../../assets/en/product/gpsvmstestsystem.png'
 import apsDriveControllerEN from '../../assets/en/product/aps(drive)controllervms3400.png'
@@ -24,7 +25,7 @@ import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.
 import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
 
 import nvdsKO from '../../assets/ko/product/nvds.md?raw'
-import pedalRobotKO from '../../assets/ko/product/pedalrobot.png'
+import pedalRobotKO from '../../assets/ko/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
 import apsDriveControllerKO from '../../assets/ko/product/aps(drive)controllervms3400.png'
@@ -71,7 +72,7 @@ const products = [
       en: 'Pedal Robot',
       ko: 'Pedal Robot'
     },
-    image: {
+    markdown: {
       en: pedalRobotEN,
       ko: pedalRobotKO
     },
@@ -355,7 +356,9 @@ function Product() {
           <div className="product-panel">
             {markdownContent ? (
               <div className="product-markdown">
-                <ReactMarkdown components={markdownComponents}>{markdownContent}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                  {markdownContent}
+                </ReactMarkdown>
               </div>
             ) : (
               activeProduct.image?.[language] ? (
