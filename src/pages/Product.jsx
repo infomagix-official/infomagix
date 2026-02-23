@@ -306,6 +306,36 @@ function Product() {
 
       return <img {...props} src={resolvedSrc} alt={cleanedAlt} style={style} className={className || undefined} />
     },
+    td: ({ children, ...props }) => {
+      const nodes = Children.toArray(children)
+      const rendered = []
+
+      nodes.forEach((node, nodeIndex) => {
+        if (typeof node !== 'string') {
+          rendered.push(node)
+          return
+        }
+
+        const chunks = node
+          .split(';')
+          .map((chunk) => chunk.trim())
+          .filter((chunk) => chunk.length > 0)
+
+        if (chunks.length <= 1) {
+          rendered.push(node)
+          return
+        }
+
+        chunks.forEach((chunk, chunkIndex) => {
+          rendered.push(chunk)
+          if (chunkIndex < chunks.length - 1) {
+            rendered.push(<br key={`br-${nodeIndex}-${chunkIndex}`} />)
+          }
+        })
+      })
+
+      return <td {...props}>{rendered}</td>
+    },
   }), [])
 
   useEffect(() => {

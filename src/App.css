@@ -514,6 +514,14 @@
   overflow-x: hidden;
 }
 
+.company-content-panel {
+  display: block;
+}
+
+.business-content-panel {
+  display: block;
+}
+
 .tab-info {
   display: flex;
   flex-direction: column;

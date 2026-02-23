@@ -30,14 +30,16 @@ const navItems = [
       ko: '견적문의'
     }, 
     to: '/contact' },
-  { 
+]
+
+{/*  {
     label: {
       en: 'Community',
       ko: '커뮤니티'
     }, 
     to: '/community' 
   },
-]
+ */}
 
 function Header() {
   const { language, toggleLanguage } = useLanguage()
