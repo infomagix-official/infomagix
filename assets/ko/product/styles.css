@@ -102,13 +102,10 @@
 }
 
 .product-markdown table {
-  width: 90%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
-  font-size: 0.95em;
-  transform: scaleX(1.1111);
-  transform-origin: 0 0;
 }
 
 .product-markdown th,
