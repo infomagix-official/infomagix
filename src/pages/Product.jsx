@@ -13,6 +13,7 @@ import gpsVmsTestSystemEN from '../../assets/en/product/gpsvmstestsystem.png'
 import apsDriveControllerEN from '../../assets/en/product/aps(drive)controllervms3400.png'
 import vmsCoastdownTestingEN from '../../assets/en/product/vmscoastdowntesting.png'
 import vmsVehicleDaqEN from '../../assets/en/product/vmsvehicledaq.png'
+import vehicleDriveTestSystemMdEN from '../../assets/en/product/vehicledrivetestsystem.md?raw'
 import vehicleDriveTestSystemEN from '../../assets/en/product/vehicledrivetestsystem.png'
 import vlogDataLoggerEN from '../../assets/en/product/vlogdatalogger.png'
 import vcdCanDisplayEN from '../../assets/en/product/vcdcandisplay.md?raw'
@@ -31,6 +32,7 @@ import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
 import apsDriveControllerKO from '../../assets/ko/product/aps(drive)controllervms3400.png'
 import vmsCoastdownTestingKO from '../../assets/ko/product/vmscoastdowntesting.png'
 import vmsVehicleDaqKO from '../../assets/ko/product/vmsvehicledaq.png'
+import vehicleDriveTestSystemMdKO from '../../assets/ko/product/vehicledrivetestsystem.md?raw'
 import vehicleDriveTestSystemKO from '../../assets/ko/product/vehicledrivetestsystem.png'
 import vlogDataLoggerKO from '../../assets/ko/product/vlogdatalogger.png'
 import vcdCanDisplayKO from '../../assets/ko/product/vcdcandisplay.md?raw'
@@ -51,6 +53,153 @@ const resolveMarkdownSrc = (src) => {
   if (!src || typeof src !== 'string' || !src.startsWith('/')) return src
   const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
   return `${normalizedBase}${src.replace(/^\/+/, '')}`
+}
+
+const isFiniteNumber = (value) => typeof value === 'number' && Number.isFinite(value)
+
+const toPercent = (value) => {
+  if (isFiniteNumber(value)) return `${value}%`
+  if (typeof value === 'string' && value.trim().length > 0) return value
+  return undefined
+}
+
+const parseDiagramDefinition = (source) => {
+  if (typeof source !== 'string') return null
+
+  try {
+    const parsed = JSON.parse(source)
+    if (!parsed || typeof parsed !== 'object') return null
+    if (!Array.isArray(parsed.items)) return null
+    return parsed
+  } catch {
+    return null
+  }
+}
+
+function DiagramBlock({ definition }) {
+  const hasBaseImage = typeof definition.baseImage === 'string' && definition.baseImage.trim().length > 0
+  const baseImageSrc = hasBaseImage ? resolveMarkdownSrc(definition.baseImage) : null
+  const aspectRatio = typeof definition.aspectRatio === 'string' ? definition.aspectRatio : '16 / 9'
+  const figureStyle = {
+    aspectRatio,
+    background: typeof definition.background === 'string' ? definition.background : undefined,
+    border: typeof definition.border === 'string' ? definition.border : undefined,
+  }
+  const defaultImageFit = typeof definition.imageFit === 'string' ? definition.imageFit : 'contain'
+  const defaultImagePosition = typeof definition.imagePosition === 'string' ? definition.imagePosition : 'center'
+  const items = Array.isArray(definition.items) ? definition.items : []
+  const arrows = items.filter((item) => item?.type === 'arrow')
+  const layers = items.filter((item) => item?.type !== 'arrow')
+
+  return (
+    <figure className="md-diagram" style={figureStyle}>
+      {hasBaseImage ? <img className="md-diagram-base" src={baseImageSrc} alt={definition.alt ?? ''} /> : null}
+      <div className="md-diagram-overlay">
+        {layers.map((item, index) => {
+          const style = {
+            left: toPercent(item.x) ?? '0%',
+            top: toPercent(item.y) ?? '0%',
+            width: toPercent(item.w),
+            height: toPercent(item.h),
+            zIndex: isFiniteNumber(item.z) ? item.z : undefined,
+          }
+          const className = `${item.className ?? ''}`.trim()
+
+          if (item.type === 'image') {
+            const imageStyle = {
+              ...style,
+              objectFit: typeof item.fit === 'string' ? item.fit : defaultImageFit,
+              objectPosition: typeof item.position === 'string' ? item.position : defaultImagePosition,
+            }
+
+            return (
+              <img
+                key={`diagram-image-${index}`}
+                className={`md-diagram-item md-diagram-image ${className}`.trim()}
+                style={imageStyle}
+                src={resolveMarkdownSrc(item.src)}
+                alt={item.alt ?? ''}
+              />
+            )
+          }
+
+          return (
+            <div
+              key={`diagram-text-${index}`}
+              className={`md-diagram-item md-diagram-text ${className}`.trim()}
+              style={style}
+            >
+              {item.text ?? ''}
+            </div>
+          )
+        })}
+        {arrows.length > 0 ? (
+          <svg className="md-diagram-arrows" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              {arrows.map((arrow, index) => {
+                const color = typeof arrow.color === 'string' ? arrow.color : '#e61b1b'
+                const rawHeadSize = Number(arrow.headSize)
+                const headScale = Number.isFinite(rawHeadSize) && rawHeadSize > 0 ? rawHeadSize : 0.375
+                const markerW = 8 * headScale
+                const markerH = 8 * headScale
+                const refX = 4 * headScale
+                const refY = 4 * headScale
+                const markerId = `md-diagram-arrow-${index}`
+                return (
+                  <marker
+                    key={`diagram-arrow-marker-${index}`}
+                    id={markerId}
+                    markerWidth={markerW}
+                    markerHeight={markerH}
+                    refX={refX}
+                    refY={refY}
+                    orient="auto"
+                    markerUnits="userSpaceOnUse"
+                  >
+                    <path d={`M 0 0 L ${8 * headScale} ${4 * headScale} L 0 ${8 * headScale} z`} fill={color} />
+                  </marker>
+                )
+              })}
+            </defs>
+            {arrows.map((arrow, index) => {
+              const x1 = Number(arrow.x1)
+              const y1 = Number(arrow.y1)
+              const x2 = Number(arrow.x2)
+              const y2 = Number(arrow.y2)
+              if (![x1, y1, x2, y2].every(Number.isFinite)) return null
+
+              const stroke = typeof arrow.color === 'string' ? arrow.color : '#e61b1b'
+              const width = Number.isFinite(Number(arrow.width)) ? Number(arrow.width) : 0.55
+              const rawHeadSize = Number(arrow.headSize)
+              const headScale = Number.isFinite(rawHeadSize) && rawHeadSize > 0 ? rawHeadSize : 0.375
+              const headOffset = 4 * headScale
+              const dx = x2 - x1
+              const dy = y2 - y1
+              const length = Math.hypot(dx, dy)
+              const shorten = length > 0 ? Math.min(headOffset, length) : 0
+              const adjustedX2 = length > 0 ? x2 - (dx / length) * shorten : x2
+              const adjustedY2 = length > 0 ? y2 - (dy / length) * shorten : y2
+              const markerId = `md-diagram-arrow-${index}`
+
+              return (
+                <line
+                  key={`diagram-arrow-${index}`}
+                  x1={x1}
+                  y1={y1}
+                  x2={adjustedX2}
+                  y2={adjustedY2}
+                  stroke={stroke}
+                  strokeWidth={width}
+                  markerEnd={`url(#${markerId})`}
+                />
+              )
+            })}
+          </svg>
+        ) : null}
+      </div>
+      {definition.caption ? <figcaption className="md-diagram-caption">{definition.caption}</figcaption> : null}
+    </figure>
+  )
 }
 
 const products = [
@@ -161,7 +310,11 @@ const products = [
     name: {
       en: 'Vehicle Drive Test System',
       ko: '주행검사장비'
-    }, 
+    },
+    markdown: {
+      en: vehicleDriveTestSystemMdEN,
+      ko: vehicleDriveTestSystemMdKO
+    },
     image: {
       en: vehicleDriveTestSystemEN,
       ko: vehicleDriveTestSystemKO
@@ -305,6 +458,38 @@ function Product() {
       const resolvedSrc = resolveMarkdownSrc(props.src)
 
       return <img {...props} src={resolvedSrc} alt={cleanedAlt} style={style} className={className || undefined} />
+    },
+    code: ({ inline, className, children, ...props }) => {
+      const languageMatch = /language-([\w-]+)/.exec(className ?? '')
+      const rawCode = String(children ?? '').replace(/\n$/, '')
+
+      if (!inline && languageMatch?.[1] === 'diagram') {
+        const definition = parseDiagramDefinition(rawCode)
+        if (!definition) {
+          return (
+            <pre className="md-diagram-error">
+              <code>{'Invalid diagram block: expected JSON with items[]'}</code>
+            </pre>
+          )
+        }
+        return <DiagramBlock definition={definition} />
+      }
+
+      if (inline) {
+        return (
+          <code {...props} className={className}>
+            {children}
+          </code>
+        )
+      }
+
+      return (
+        <pre>
+          <code {...props} className={className}>
+            {children}
+          </code>
+        </pre>
+      )
     },
     td: ({ children, ...props }) => {
       const nodes = Children.toArray(children)

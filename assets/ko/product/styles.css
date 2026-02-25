@@ -121,3 +121,86 @@
   color: #1f4f8a;
   font-weight: 700;
 }
+
+.product-markdown .md-diagram {
+  width: 100%;
+  margin: 18px 0 24px;
+  position: relative;
+  border: 1px solid #d8e4f2;
+  background: transparent;
+}
+
+.product-markdown .md-diagram-base {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  transform: none;
+}
+
+.product-markdown .md-diagram-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.product-markdown .md-diagram-item {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.product-markdown .md-diagram-text {
+  border: 2px solid #2ca5f5;
+  background: transparent;
+  padding: 10px 12px;
+  line-height: 1.3;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1;
+  white-space: pre-line;
+  user-select: text;
+  -webkit-user-select: text;
+  pointer-events: auto;
+}
+
+.product-markdown .md-diagram-image {
+  border: none;
+  object-fit: contain;
+  transform: none;
+  pointer-events: none;
+}
+
+.product-markdown .md-diagram-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.product-markdown .md-diagram-caption {
+  margin-top: 8px;
+  color: #5a5a5a;
+  font-size: 0.92rem;
+}
+
+.product-markdown .md-diagram-error {
+  border: 1px solid #d84949;
+  background: #fff6f6;
+  color: #8b1d1d;
+  padding: 8px 10px;
+}
+
+.product-markdown .md-diagram-note-large {
+  font-size: clamp(13px, 2.1vw, 27px);
+}
+
+.product-markdown .md-diagram-note-medium {
+  font-size: clamp(12px, 1.8vw, 21px);
+}
+
+.product-markdown .md-diagram-note-small {
+  font-size: clamp(11px, 1.5vw, 18px);
+}
