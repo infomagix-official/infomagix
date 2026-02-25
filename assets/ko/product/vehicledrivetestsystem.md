@@ -242,7 +242,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 8,
       "w": 50,
       "h": 25,
-      "text": "Measures low-frequency noise while passing the specified test interval at the specified speed.\nThe test can be run manually, or it can run automatically if the test section is predefined."
+      "text": "지정된 속도로 지정된 테스트 구간을 통과하면서 저주파 소음을 측정합니다.\n테스트는 수동으로 수행하거나, 테스트 구간을 사전 지정하면 자동으로 수행할 수 있습니다."
     },
     {
       "type": "text",
@@ -251,7 +251,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 40,
       "w": 60,
       "h": 20,
-      "text": "When test conditions are met, the green lamp turns on; otherwise, the red lamp turns on.\nTest condition: gear 'D', vehicle speed '60 kph', TPMS '34 psi'."
+      "text": "테스트 조건이 충족되면 녹색 램프가 켜지고, 충족되지 않으면 빨간색 램프가 켜집니다.\n테스트 조건: 기어 'D', 차량 속도 '60 kph', TPMS '34 psi'."
     },
     {
       "type": "text",
@@ -260,7 +260,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 87,
       "w": 48,
       "h": 10,
-      "text": "When the test conditions are met and the test preparation is completed, the 'Ready' lamp lights up."
+      "text": "테스트 조건이 충족되고 테스트 준비가 완료되면 'Ready' 램프가 점등됩니다."
     },
     {
       "type": "arrow",
@@ -331,7 +331,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 3,
       "w": 50,
       "h": 25,
-      "text": "Measures high-frequency noise over a specified interval (distance or time) at the specified speed.\nThe test starts manually and ends automatically after the configured distance or time."
+      "text": "지정된 속도에서 지정된 구간(거리 또는 시간) 동안 고주파 소음을 측정합니다.\n테스트는 수동으로 시작하고, 설정된 거리 또는 시간이 지나면 자동으로 종료됩니다."
     },
     {
       "type": "text",
@@ -340,7 +340,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 80,
       "w": 35,
       "h": 15,
-      "text": "Test condition: gear 'D', TPMS '35 psi', vehicle speed '80 kph'."
+      "text": "테스트 조건: 기어 'D', TPMS '35 psi', 차량 속도 '80 kph'."
     },
     {
       "type": "text",
@@ -349,7 +349,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 80,
       "w": 35,
       "h": 15,
-      "text": "After the test, results remain on screen for verification."
+      "text": "테스트 결과는 확인을 위해 시험 후에도 화면에 유지됩니다."
     },
     {
       "type": "arrow",
@@ -428,7 +428,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 3,
       "w": 80,
       "h": 15,
-      "text": "Measures cabin noise in IDLE state.\nIn 'N' state, the air conditioner is OFF.\nThe test starts manually and ends automatically after the configured duration."
+      "text": "IDLE 상태에서 실내 소음을 측정합니다.\n'N' 상태에서 에어컨은 OFF입니다.\n테스트는 수동으로 시작하고 설정된 시간이 지나면 자동으로 종료됩니다."
     },
     {
       "type": "text",
@@ -437,7 +437,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 87,
       "w": 25,
       "h": 10,
-      "text": "Test conditions met.\nStart the test."
+      "text": "테스트 조건 충족.\n테스트를 시작하세요."
     },
     {
       "type": "arrow",
@@ -483,7 +483,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 60,
       "h": 15,
-      "text": "Measures indoor booming noise in the IDLE state. To apply the engine load, shift is set to 'D' and air conditioner is turned ON. The test starts manually and ends automatically after the specified time."
+      "text": "IDLE 상태에서 실내 부밍 소음을 측정합니다. 엔진 부하를 주기 위해 변속은 'D'로 설정하고 에어컨은 ON으로 설정합니다. 테스트는 수동으로 시작하고 지정된 시간이 지나면 자동으로 종료됩니다."
     }
   ]
 }
@@ -535,7 +535,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 3,
       "w": 60,
       "h": 15,
-      "text": "Measures the noise produced during acceleration.\nAccelerate to WOT from standstill to the specified RPM.\nAccelerate from creep state to the specified RPM at WOT."
+      "text": "가속 중 발생하는 소음을 측정합니다.\n정지 상태에서 지정 RPM까지 WOT로 가속합니다.\n크립 상태에서 지정 RPM까지 WOT로 가속합니다."
     },
     {
       "type": "text",
@@ -544,7 +544,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 65,
       "w": 20,
       "h": 15,
-      "text": "Condition: shift 'D', air conditioner ON, start from standstill."
+      "text": "조건: 변속 'D', 에어컨 ON, 정지 상태에서 시작."
     },
     {
       "type": "text",
@@ -553,7 +553,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 70,
       "w": 30,
       "h": 25,
-      "text": "If test conditions are not met, a 'retry' prompt is provided.\nRapid acceleration condition: maintain APS above 97%."
+      "text": "테스트 조건이 충족되지 않으면 'retry' 안내가 표시됩니다.\n급가속 조건: APS를 97% 이상으로 유지."
     },
     {
       "type": "arrow",
@@ -583,7 +583,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 20,
       "w": 60,
       "h": 15,
-      "text": "Constant Speed Noise\nMeasures noise during steady-speed driving."
+      "text": "정속 주행 소음\n정속 주행 중 소음을 측정합니다."
     },
     {
       "type": "text",
@@ -592,7 +592,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 40,
       "w": 60,
       "h": 30,
-      "text": "Direct Booming Noise\nMeasures noise while driving with the transmission directly connected.\nThis must be performed under conditions that keep the automatic transmission connected during the test.\nEach manufacturer should define the specific driving conditions for this test."
+      "text": "직결 부밍 소음\n변속기가 직결된 상태로 주행하면서 소음을 측정합니다.\n테스트 중 자동변속기가 직결 상태를 유지하는 조건에서 수행해야 합니다.\n구체적인 주행 조건은 각 제조사가 정의해야 합니다."
     }
   ]
 }
@@ -644,7 +644,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 3,
       "w": 50,
       "h": 30,
-      "text": "Measures pulling tendency (steering drift force) and vehicle straightness during constant-speed driving.\nTo calculate pull distance, the test is executed using predefined location points.\nCondition: gear 'D', TPMS '33 psi', displayed speed '60 kph' (actual 90 kph)."
+      "text": "정속 주행 중 차량의 쏠림(조향 드리프트 힘)과 직진성을 측정합니다.\n쏠림 거리를 계산하기 위해 사전 정의된 위치 포인트 기반으로 테스트를 수행합니다.\n조건: 기어 'D', TPMS '33 psi', 표시 속도 '60 kph'."
     },
     {
       "type": "text",
@@ -653,7 +653,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 67,
       "w": 40,
       "h": 10,
-      "text": "As the vehicle passes through the point, the test is automatically performed."
+      "text": "차량이 시작 지점을 통과하면 테스트가 자동으로 수행됩니다."
     },
     {
       "type": "text",
@@ -662,7 +662,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 85,
       "w": 50,
       "h": 10,
-      "text": "Using the remote control, specify the preparation point, start point and end point respectively."
+      "text": "리모컨을 사용해 준비 지점, 시작 지점, 종료 지점을 각각 지정합니다."
     },
     {
       "type": "arrow",
@@ -731,7 +731,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 35,
       "w": 94,
       "h": 20,
-      "text": "Drive at constant speed at the specified vehicle speed ('40 kph') and start acceleration at the test start position. Automated testing is based on points determined based on location to calculate the pull distance, but manual start and end is also possible. To reduce the error of the repeat test, the result is corrected by measuring the offset distance of the starting point or the azimuth at entry."
+      "text": "지정 차량 속도('40 kph')로 정속 주행 중, 테스트 시작 위치에서 가속을 시작합니다. 자동 테스트는 위치 기반으로 결정된 지점을 기준으로 쏠림 거리를 계산하며, 수동 시작/종료도 가능합니다. 반복 테스트 오차를 줄이기 위해 시작점의 오프셋 거리 또는 진입 방위각을 측정해 결과를 보정합니다."
     },
     {
       "type": "text",
@@ -740,7 +740,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 90,
       "w": 94,
       "h": 7,
-      "text": "If criteria are not satisfied, a 'Retry' prompt is displayed."
+      "text": "기준을 만족하지 않으면 'Retry' 안내가 표시됩니다."
     }
   ]
 }
@@ -768,7 +768,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 50,
       "w": 60,
       "h": 25,
-      "text": "Rapidly accelerates to WOT from standstill to reach the specified speed ('40 kph').\nMeasures steering torque and steering-angle change; tire-slip measurement is also supported."
+      "text": "정지 상태에서 WOT로 급가속하여 지정 속도('40 kph')에 도달합니다.\n조향 토크와 조향각 변화를 측정하며, 타이어 슬립 측정도 지원합니다."
     }
   ]
 }
@@ -796,7 +796,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 50,
       "w": 60,
       "h": 40,
-      "text": "Drive at '140 kph' and measure vehicle straightness during braking until stop at the specified deceleration.\nMeasures steering torque and steering-angle change.\n\nThe test runs automatically when braking starts in ready state (constant speed).\nIf deceleration conditions are not met during the test, a 'Retry' prompt is provided."
+      "text": "'140 kph'로 주행 중, 지정 감속도로 정지할 때까지 제동하면서 차량 직진성을 측정합니다.\n조향 토크와 조향각 변화도 측정합니다.\n\n준비 상태(정속)에서 제동이 시작되면 테스트가 자동으로 수행됩니다.\n테스트 중 감속 조건이 충족되지 않으면 'Retry' 안내가 제공됩니다."
     }
   ]
 }
@@ -840,7 +840,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 60,
       "h": 15,
-      "text": "Steering angle, steering angular speed, steering torque, etc. are measured while continuously steering from neutral to left -> right -> neutral while the vehicle is stopped."
+      "text": "차량 정지 상태에서 중립 -> 좌 -> 우 -> 중립으로 연속 조향하는 동안 조향각, 조향 각속도, 조향 토크 등을 측정합니다."
     }
   ]
 }
@@ -868,7 +868,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 50,
       "w": 60,
       "h": 30,
-      "text": "At the specified speed ('40 kph'), hold -90 degrees steering, start measurement, then release the steering wheel until the return angle converges.\n\nMeasures steering returnability (self-centering performance) using steering angle, steering angular speed, and steering torque."
+      "text": "지정 속도('40 kph')에서 조향각 -90도를 유지한 뒤 측정을 시작하고, 조향휠을 놓아 복원각이 수렴할 때까지 측정합니다.\n\n조향각, 조향 각속도, 조향 토크를 이용해 조향 복원성(자가 복원 성능)을 측정합니다."
     }
   ]
 }
@@ -904,7 +904,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 35,
       "h": 50,
-      "text": "With the steering angle fully turned left and right while the vehicle is stopped, press the remote control switch to record the steering angle.\n\nFor convenience, if the steering angle is maintained for a certain time, it is regarded as a full turn under the test condition, and the automatic recording method is used."
+      "text": "차량 정지 상태에서 조향각을 좌우 끝까지 돌린 뒤 리모컨 스위치를 눌러 조향각을 기록합니다.\n\n편의를 위해 조향각이 일정 시간 유지되면 테스트 조건에서 풀턴으로 간주하여 자동으로 기록할 수 있습니다."
     }
   ]
 }
@@ -940,7 +940,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 60,
       "h": 30,
-      "text": "While the vehicle is stopped, steering noise is measured while turning fully left and right.\n\nFor test convenience, if the steering angle is maintained for a defined time, it is treated as full turn and recorded automatically."
+      "text": "차량 정지 상태에서 조향을 좌우 풀턴으로 돌리며 조향 소음을 측정합니다.\n\n테스트 편의를 위해 조향각이 설정 시간 동안 유지되면 풀턴으로 판단하여 자동 기록합니다."
     },
     {
       "type": "arrow",
@@ -1025,7 +1025,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 94,
       "h": 15,
-      "text": "At low constant speed ('24 kph'), follow the turn radius indicated on the test road. If no radius is marked on the road, use the radius shown on the test screen.\n(Confirm agreement between calculated turning radius and test-path radius.)"
+      "text": "저속 정속('24 kph')으로 시험로에 표시된 선회 반경을 따라 주행합니다. 시험로에 반경 표시가 없으면 시험 화면에 표시된 반경을 사용합니다.\n(계산된 선회 반경과 시험 경로 반경의 일치 여부를 확인합니다.)"
     }
   ]
 }
@@ -1053,7 +1053,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 50,
       "w": 60,
       "h": 20,
-      "text": "While driving in a straight line at the specified low speed ('20 kph'), start the test with the remote controller and measure the steering feeling data by steering to the left and right full turns."
+      "text": "지정 저속('20 kph')으로 직진 주행 중 리모컨으로 테스트를 시작하고, 좌우 풀턴 조향으로 조향감 데이터를 측정합니다."
     }
   ]
 }
@@ -1081,7 +1081,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 50,
       "w": 60,
       "h": 20,
-      "text": "While driving in a straight line at the specified speed ('60 kph'), start the test with the remote controller and measure the steering feeling data by steering to the left and right 90 degrees."
+      "text": "지정 속도('60 kph')로 직진 주행 중 리모컨으로 테스트를 시작하고, 좌우 90도 조향으로 조향감 데이터를 측정합니다."
     }
   ]
 }
@@ -1141,7 +1141,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 75,
       "w": 80,
       "h": 20,
-      "text": "Proceed as in the conventional performance test.\nFor the practical acceleration test, APS must be maintained at the specified value. If it is not maintained, a 'Retry' prompt is required after test failure."
+      "text": "기존 성능 시험과 동일하게 진행합니다.\n실용가속 시험에서는 APS를 지정 값으로 유지해야 하며, 유지되지 않으면 시험 실패 후 'Retry' 안내가 제공됩니다."
     }
   ]
 }
@@ -1193,7 +1193,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 10,
       "w": 40,
       "h": 25,
-      "text": "Maximum deceleration and stopping distance are measured while braking from the specified speed ('100 kph') to a full stop.\nStopping distance is corrected to a representative initial-speed value."
+      "text": "지정 속도('100 kph')에서 완전 정지할 때까지 제동하며 최대 감속도와 제동거리를 측정합니다.\n제동거리는 대표 초기 속도 값으로 보정합니다."
     },
     {
       "type": "text",
@@ -1202,7 +1202,7 @@ NVH 신호는 가속도 센서를 사용하고 dB 계산을 위한 레벨 기본
       "y": 60,
       "w": 40,
       "h": 15,
-      "text": "The Fade test measures the difference in performance of repeated braking."
+      "text": "Fade 테스트는 반복 제동 시 성능 차이를 측정합니다."
     }
   ]
 }
