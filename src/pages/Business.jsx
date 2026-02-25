@@ -1,6 +1,7 @@
 import { Children, useEffect, useMemo, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkSupSub, { supSubHandlers } from '../lib/remarkSupSub'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 import keyTechnologyMarkdownEN from '../../assets/en/business/keytechnology.md?raw'
@@ -146,7 +147,11 @@ function Business() {
         <div className="tab-panel image-only business-content-panel">
             {markdownContent ? (
               <div className="business-markdown">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkSupSub]}
+                  remarkRehypeOptions={{ handlers: supSubHandlers }}
+                  components={markdownComponents}
+                >
                   {markdownContent}
                 </ReactMarkdown>
               </div>

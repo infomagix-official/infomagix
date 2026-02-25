@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, Children, isValidElement } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkSupSub, { supSubHandlers } from '../lib/remarkSupSub'
 import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
@@ -571,7 +572,11 @@ function Product() {
           <div className="product-panel">
             {markdownContent ? (
               <div className="product-markdown">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkSupSub]}
+                  remarkRehypeOptions={{ handlers: supSubHandlers }}
+                  components={markdownComponents}
+                >
                   {markdownContent}
                 </ReactMarkdown>
               </div>
