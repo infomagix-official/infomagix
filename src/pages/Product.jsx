@@ -10,7 +10,7 @@ import nvdsEN from '../../assets/en/product/nvds.md?raw'
 import pedalRobotEN from '../../assets/en/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemEN from '../../assets/en/product/gpsvmstestsystem.png'
-import apsDriveControllerEN from '../../assets/en/product/aps(drive)controllervms3400.png'
+import apsDriveControllerEN from '../../assets/en/product/aps(drive)controllervms3400.md?raw'
 import vmsCoastdownTestingEN from '../../assets/en/product/vmscoastdowntesting.png'
 import vmsVehicleDaqEN from '../../assets/en/product/vmsvehicledaq.png'
 import vehicleDriveTestSystemMdEN from '../../assets/en/product/vehicledrivetestsystem.md?raw'
@@ -29,7 +29,7 @@ import nvdsKO from '../../assets/ko/product/nvds.md?raw'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
 import gpsVmsTestSystemKO from '../../assets/ko/product/gpsvmstestsystem.png'
-import apsDriveControllerKO from '../../assets/ko/product/aps(drive)controllervms3400.png'
+import apsDriveControllerKO from '../../assets/ko/product/aps(drive)controllervms3400.md?raw'
 import vmsCoastdownTestingKO from '../../assets/ko/product/vmscoastdowntesting.png'
 import vmsVehicleDaqKO from '../../assets/ko/product/vmsvehicledaq.png'
 import vehicleDriveTestSystemMdKO from '../../assets/ko/product/vehicledrivetestsystem.md?raw'
@@ -258,7 +258,7 @@ const products = [
       en: 'APS(Drive) controller VMS3400',
       ko: 'APS(Drive) controller VMS3400'
     }, 
-    image: {
+    markdown: {
       en: apsDriveControllerEN,
       ko: apsDriveControllerKO 
     },
