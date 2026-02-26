@@ -22,7 +22,7 @@ import b2DaqAdBoardEN from '../../assets/en/product/b2daqadboard.png'
 import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
 import activeeyeSoftwareEN from '../../assets/en/product/activeeyesoftware.png'
 import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
-import testBenchEN from '../../assets/en/product/testbench.png'
+import testBenchEN from '../../assets/en/product/testbench.md?raw'
 import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.md?raw'
 import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
 
@@ -41,7 +41,7 @@ import b2DaqAdBoardKO from '../../assets/ko/product/b2daqadboard.png'
 import activeSoftwareKO from '../../assets/ko/product/activesoftware.png'
 import activeeyeSoftwareKO from '../../assets/ko/product/activeeyesoftware.png'
 import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
-import testBenchKO from '../../assets/ko/product/testbench.png'
+import testBenchKO from '../../assets/ko/product/testbench.md?raw'
 import costDownTestServiceKO from '../../assets/ko/product/coastdowntestservice.md?raw'
 import productMarkdownStylesKO from '../../assets/ko/product/styles.css?url'
 
@@ -400,7 +400,7 @@ const products = [
       en: 'Test bench',
       ko: 'Test bench'
     }, 
-    image: {
+    markdown: {
       en: testBenchEN,
       ko: testBenchKO
     },
