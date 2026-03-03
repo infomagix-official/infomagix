@@ -16,7 +16,7 @@ import vmsCoastdownTestingEN from '../../assets/en/product/vmscoastdowntesting.p
 import vmsVehicleDaqEN from '../../assets/en/product/vmsvehicledaq.png'
 import vehicleDriveTestSystemMdEN from '../../assets/en/product/vehicledrivetestsystem.md?raw'
 import vehicleDriveTestSystemEN from '../../assets/en/product/vehicledrivetestsystem.png'
-import vlogDataLoggerEN from '../../assets/en/product/vlogdatalogger.png'
+import vlogDataLoggerEN from '../../assets/en/product/vlogdatalogger.md?raw'
 import vcdCanDisplayEN from '../../assets/en/product/vcdcandisplay.md?raw'
 import b2DaqAdBoardEN from '../../assets/en/product/b2daqadboard.png'
 import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
@@ -35,7 +35,7 @@ import vmsCoastdownTestingKO from '../../assets/ko/product/vmscoastdowntesting.p
 import vmsVehicleDaqKO from '../../assets/ko/product/vmsvehicledaq.png'
 import vehicleDriveTestSystemMdKO from '../../assets/ko/product/vehicledrivetestsystem.md?raw'
 import vehicleDriveTestSystemKO from '../../assets/ko/product/vehicledrivetestsystem.png'
-import vlogDataLoggerKO from '../../assets/ko/product/vlogdatalogger.png'
+import vlogDataLoggerKO from '../../assets/ko/product/vlogdatalogger.md?raw'
 import vcdCanDisplayKO from '../../assets/ko/product/vcdcandisplay.md?raw'
 import b2DaqAdBoardKO from '../../assets/ko/product/b2daqadboard.png'
 import activeSoftwareKO from '../../assets/ko/product/activesoftware.png'
@@ -328,7 +328,7 @@ const products = [
       en: 'VLOG Data logger',
       ko: 'VLOG Data logger',
     }, 
-    image: {
+    markdown: {
       en: vlogDataLoggerEN,
       ko: vlogDataLoggerKO
     },
