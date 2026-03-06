@@ -88,17 +88,44 @@
   margin-right: auto;
 }
 
+.product-markdown .md-figure {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0;
+}
+
+.product-markdown .md-figure img {
+  margin-left: auto;
+  margin-right: auto;
+  transform-origin: 50% 0;
+}
+
+.product-markdown .md-figure-caption {
+  margin-top: 8px;
+  color: #5a5a5a;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
 .product-markdown .md-image-row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   align-items: flex-start;
+  justify-content: center;
   margin: 12px 0;
 }
 
 .product-markdown .md-image-row img {
   width: auto;
   max-width: 100%;
+}
+
+.product-markdown .md-image-row .md-figure {
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  flex: 0 1 auto;
 }
 
 .product-markdown table {

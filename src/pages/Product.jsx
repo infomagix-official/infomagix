@@ -21,7 +21,7 @@ import vcdCanDisplayEN from '../../assets/en/product/vcdcandisplay.md?raw'
 import b2DaqAdBoardEN from '../../assets/en/product/b2daqadboard.png'
 import activeSoftwareEN from '../../assets/en/product/activesoftware.png'
 import activeeyeSoftwareEN from '../../assets/en/product/activeeyesoftware.png'
-import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.png'
+import chamberControlBaqEN from '../../assets/en/product/chambercontroldaq.md?raw'
 import testBenchEN from '../../assets/en/product/testbench.md?raw'
 import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.md?raw'
 import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
@@ -40,7 +40,7 @@ import vcdCanDisplayKO from '../../assets/ko/product/vcdcandisplay.md?raw'
 import b2DaqAdBoardKO from '../../assets/ko/product/b2daqadboard.png'
 import activeSoftwareKO from '../../assets/ko/product/activesoftware.png'
 import activeeyeSoftwareKO from '../../assets/ko/product/activeeyesoftware.png'
-import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.png'
+import chamberControlBaqKO from '../../assets/ko/product/chambercontroldaq.md?raw'
 import testBenchKO from '../../assets/ko/product/testbench.md?raw'
 import costDownTestServiceKO from '../../assets/ko/product/coastdowntestservice.md?raw'
 import productMarkdownStylesKO from '../../assets/ko/product/styles.css?url'
@@ -62,6 +62,58 @@ const toPercent = (value) => {
   if (isFiniteNumber(value)) return `${value}%`
   if (typeof value === 'string' && value.trim().length > 0) return value
   return undefined
+}
+
+const parseMarkdownImageAlt = (alt) => {
+  const rawAlt = typeof alt === 'string' ? alt.trim() : ''
+  if (!rawAlt) {
+    return {
+      altText: '',
+      caption: '',
+      widthValue: null,
+    }
+  }
+
+  const segments = rawAlt.split('|').map((segment) => segment.trim()).filter(Boolean)
+  const options = {
+    altText: segments[0] ?? '',
+    caption: '',
+    widthValue: null,
+  }
+
+  const extractLegacyWidth = (text) => {
+    const widthMatch = text.match(/\bw=([0-9]+(?:\.[0-9]+)?)%?\b/i)
+    if (!widthMatch) return text.trim()
+    options.widthValue = options.widthValue ?? `${widthMatch[1]}%`
+    return text.replace(widthMatch[0], '').replace(/\s{2,}/g, ' ').trim()
+  }
+
+  options.altText = extractLegacyWidth(options.altText)
+
+  for (let index = 1; index < segments.length; index += 1) {
+    const segment = segments[index]
+    const optionMatch = segment.match(/^([a-z][\w-]*)\s*=\s*(.+)$/i)
+
+    if (!optionMatch) {
+      options.altText = [options.altText, extractLegacyWidth(segment)].filter(Boolean).join(' ').trim()
+      continue
+    }
+
+    const [, key, rawValue] = optionMatch
+    const value = rawValue.trim()
+
+    if (key.toLowerCase() === 'caption') {
+      options.caption = value
+      continue
+    }
+
+    if (key.toLowerCase() === 'w') {
+      const widthMatch = value.match(/^([0-9]+(?:\.[0-9]+)?)%?$/)
+      if (widthMatch) options.widthValue = `${widthMatch[1]}%`
+    }
+  }
+
+  return options
 }
 
 const parseDiagramDefinition = (source) => {
@@ -388,7 +440,7 @@ const products = [
       en: 'Chamber control & DAQ',
       ko: '챔버컨트롤 & DAQ',
     },
-    image: {
+    markdown: {
       en: chamberControlBaqEN,
       ko: chamberControlBaqKO
     },
@@ -435,7 +487,11 @@ function Product() {
   const markdownComponents = useMemo(() => ({
     p: ({ children, ...props }) => {
       const nodes = Children.toArray(children)
-      const isImageNode = (node) => isValidElement(node) && (node.type === 'img' || node.props?.node?.tagName === 'img')
+      const isImageNode = (node) => {
+        if (!isValidElement(node)) return false
+        if (node.type === 'img' || node.props?.node?.tagName === 'img') return true
+        return typeof node.type === 'string' && node.type === 'figure' && node.props?.className?.includes('md-figure')
+      }
       const hasOnlyImages = nodes.length > 0 && nodes.every((node) => {
         if (typeof node === 'string') return node.trim() === ''
         return isImageNode(node)
@@ -449,16 +505,25 @@ function Product() {
       return <p {...props}>{children}</p>
     },
     img: ({ alt, ...props }) => {
-      const altText = typeof alt === 'string' ? alt : ''
-      const widthMatch = altText.match(/\bw=([0-9]+(?:\.[0-9]+)?)%?\b/i)
-      const widthValue = widthMatch ? `${widthMatch[1]}%` : null
-      const cleanedAlt = widthMatch ? altText.replace(widthMatch[0], '').trim() : altText
+      const { altText, caption, widthValue } = parseMarkdownImageAlt(alt)
       const scaledWidth = widthValue ? `calc(${widthValue} / 1.1111)` : undefined
-      const style = scaledWidth ? { width: scaledWidth, maxWidth: scaledWidth } : undefined
+      const style = caption
+        ? { width: 'calc(100% / 1.1111)', maxWidth: 'calc(100% / 1.1111)' }
+        : scaledWidth
+          ? { width: scaledWidth, maxWidth: scaledWidth }
+          : undefined
       const className = `${props.className ?? ''}${widthValue ? ' md-image-centered' : ''}`.trim()
       const resolvedSrc = resolveMarkdownSrc(props.src)
+      const image = <img {...props} src={resolvedSrc} alt={altText} style={style} className={className || undefined} />
 
-      return <img {...props} src={resolvedSrc} alt={cleanedAlt} style={style} className={className || undefined} />
+      if (!caption) return image
+
+      return (
+        <figure className="md-figure" style={widthValue ? { width: widthValue, maxWidth: widthValue } : undefined}>
+          {image}
+          <figcaption className="md-figure-caption">{caption}</figcaption>
+        </figure>
+      )
     },
     code: ({ inline, className, children, ...props }) => {
       const languageMatch = /language-([\w-]+)/.exec(className ?? '')
