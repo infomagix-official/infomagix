@@ -7,6 +7,7 @@ import HeroGallery from '../components/HeroGallery'
 import PageTitleBar from '../components/PageTitleBar'
 
 
+import adasEN from '../../assets/en/product/adas.md?raw'
 import nvdsEN from '../../assets/en/product/nvds.md?raw'
 import pedalRobotEN from '../../assets/en/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdEN from '../../assets/en/product/gpsspeedsensorvsd.png'
@@ -26,6 +27,7 @@ import testBenchEN from '../../assets/en/product/testbench.md?raw'
 import costDownTestServiceEN from '../../assets/en/product/coastdowntestservice.md?raw'
 import productMarkdownStylesEN from '../../assets/en/product/styles.css?url'
 
+import adasKO from '../../assets/ko/product/adas.md?raw'
 import nvdsKO from '../../assets/ko/product/nvds.md?raw'
 import pedalRobotKO from '../../assets/ko/product/pedalrobot.md?raw'
 import gpsSpeedSensorVsdKO from '../../assets/ko/product/gpsspeedsensorvsd.png'
@@ -256,6 +258,18 @@ function DiagramBlock({ definition }) {
 }
 
 const products = [
+  { 
+    id: 'adas',
+    name: {
+      en: 'ADAS Test System',
+      ko: 'ADAS Test System'
+    }, 
+    markdown: {
+      en: adasEN,
+      ko: adasKO
+    },
+    file: []
+  },
   { 
     id: 'nvds',
     name: {
