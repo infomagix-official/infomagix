@@ -47,7 +47,7 @@ import testBenchKO from '../../assets/ko/product/testbench.md?raw'
 import costDownTestServiceKO from '../../assets/ko/product/coastdowntestservice.md?raw'
 import productMarkdownStylesKO from '../../assets/ko/product/styles.css?url'
 
-import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저항시험 안내.pdf'
+//import vmsCostdownFile from '../../assets/file/251002인포매직스 주행저항시험 안내.pdf'
 
 import { useLanguage } from '../context/LanguageContext'
 
