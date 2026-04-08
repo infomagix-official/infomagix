@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import adas from '../../assets/en/shortcut/product_shortcut_adas.png'
 import coastdown from '../../assets/en/shortcut/product_shortcut_coastdown.png'
 import performance from '../../assets/en/shortcut/product_shortcut_performance.png'
 import gpscan from '../../assets/en/shortcut/product_shortcut_gpscan.png'
@@ -14,6 +15,10 @@ import software from '../../assets/en/shortcut/product_shortcut_software.png'
 import { useLanguage } from '../context/LanguageContext'
 
 const shortcuts = [
+  { name: {
+    en: 'ADAS Test System',
+    ko: 'ADAS 테스트 시스템'
+  }, image: adas, slug: 'adas' },
   { name: {
     en: 'Coastdown Test System',
     ko: '코스트다운 테스트 시스템'
